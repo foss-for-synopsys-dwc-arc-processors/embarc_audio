@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Audio Codecs &mdash; embARC Audio Codecs 1.00 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="GSM-FR Codec" href="GSM-FR_README.html" />
+    <link rel="prev" title="Getting Started" href="../Getting_started/Getting_started.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../Home_page.html" class="icon icon-home"> embARC Audio Codecs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Overview/Overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Getting_started/Getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Audio Codecs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#codecs-supported-by-embarc-audio">Codecs Supported by embARC Audio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#etsi-3gpp-codecs">ETSI/3GPP Codecs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#itu-t-codecs">ITU-T Codecs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bluetooth-cvsd">Bluetooth CVSD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sony-ldac">Sony LDAC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#optimizations">Optimizations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#itu-t-basop-optimization">ITU-T Basop Optimization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#link-time-optimization">Link Time Optimization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compiler-optimization-options">Compiler Optimization Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hmerge">Hmerge</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#supported-codecs">Supported Codecs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="GSM-FR_README.html">GSM-FR Codec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="G_711_README.html">G.711</a></li>
+<li class="toctree-l3"><a class="reference internal" href="G_722_README.html">G.722 Appendix IV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="G_726_README.html">G.726</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BT-CVSD_README.html">BT-CVSD Codec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LDAC_encoder_README.html">LDAC Encoder</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../Home_page.html">embARC Audio Codecs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../Home_page.html">Docs</a> &raquo;</li>
+        
+      <li>Audio Codecs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Audio_codecs/Audio_codecs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="audio-codecs">
+<h1>Audio Codecs<a class="headerlink" href="#audio-codecs" title="Permalink to this headline">¶</a></h1>
+<p>An audio codec is a Hardware device or computer program capable of encoding
+or decoding a digital audio signal including music and human speech.
+In software terms, an audio codec is a computer program implementing
+an algorithm that compresses and decompresses digital audio data.</p>
+<p>Telecommunications codecs written using ITU-T/ETSI baseops for elementary
+operations require bit-exact operations.</p>
+<p>The objective of the algorithm is to represent the audio
+signal with minimum number of bits while retaining acceptable
+perceptual quality characteristics. This reduces the storage or the
+bandwidth requirements to store or transmit digital audio.
+The embARC Audio codecs are set of software libraries implementing
+legacy and commonly used codecs standardized by
+<a class="reference external" href="https://www.etsi.org/">ETSI</a>/<a class="reference external" href="https://www.3gpp.org/">3GPP</a> and
+<a class="reference external" href="https://www.itu.int/en/ITU-T/about/Pages/default.aspx">ITU-T</a>.</p>
+<p>DSP algorithms can be implemented using different data types,
+can come from different sources, can have different requirements
+and can evolve differently.
+Some usual cases are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Porting of integer C code using standard C integer types</li>
+<li>Porting of C code using floating point (either using a floating-point
+unit or emulation)</li>
+<li>Porting fixed-point algorithms written with C integer types and
+operations</li>
+<li>Porting fixed-point algorithms written using special macros for
+fixed-point multiplication, multiply-add operations, and so on</li>
+</ul>
+</div></blockquote>
+<div class="section" id="codecs-supported-by-embarc-audio">
+<h2>Codecs Supported by embARC Audio<a class="headerlink" href="#codecs-supported-by-embarc-audio" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="etsi-3gpp-codecs">
+<h3>ETSI/3GPP Codecs<a class="headerlink" href="#etsi-3gpp-codecs" title="Permalink to this headline">¶</a></h3>
+<p>Codecs of this group are designed to transmit speech over cellular network.
+GSM Full Rate (GSM-FR) was the first digital speech coding standard used in
+early deployments of GSM digital mobile phone systems. The GSM-FR
+bitrate is 13 kbps and has very moderate MIPS/memory requirements.</p>
+</div>
+<div class="section" id="itu-t-codecs">
+<h3>ITU-T Codecs<a class="headerlink" href="#itu-t-codecs" title="Permalink to this headline">¶</a></h3>
+<p>These codecs are implementations of <a class="reference external" href="https://www.itu.int/rec/T-REC-G/en">G series of ITU-T
+standards</a>. They are designed
+for voice transmission over Plain Switched Telephone Networks, Voice
+over IP, and mobile networks.</p>
+</div>
+<div class="section" id="bluetooth-cvsd">
+<h3>Bluetooth CVSD<a class="headerlink" href="#bluetooth-cvsd" title="Permalink to this headline">¶</a></h3>
+<p>Continuously variable Slope Delta Modulation (BT-CVSD) is a mandatory
+codec for Bluetooth to transmit speech at 8 kHz sampling rate at 64 kbps.</p>
+</div>
+<div class="section" id="sony-ldac">
+<h3>Sony LDAC<a class="headerlink" href="#sony-ldac" title="Permalink to this headline">¶</a></h3>
+<p>LDAC is an audio coding technology developed by
+<a class="reference external" href="https://www.sony.net/Products/LDAC/">Sony</a>, which allows streaming
+audio over Bluetooth connections up to 990 kbps at 24 bit/96 kHz (also
+called high-resolution audio). It is used by various Sony products.</p>
+</div>
+</div>
+<div class="section" id="optimizations">
+<h2>Optimizations<a class="headerlink" href="#optimizations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="itu-t-basop-optimization">
+<h3>ITU-T Basop Optimization<a class="headerlink" href="#itu-t-basop-optimization" title="Permalink to this headline">¶</a></h3>
+<p>To improve performance of ITU-T and ETSI/3GPP codecs at early optimization
+step, use Synopsys MetaWare Development Tools which efficiently replace
+<a class="reference external" href="https://www.itu.int/rec/T-REC-G.191/en">ITU-T G.191 STL basic operators</a>
+with ARCv2 fixed point intrinsics at compile time.</p>
+</div>
+<div class="section" id="link-time-optimization">
+<span id="lto"></span><h3>Link Time Optimization<a class="headerlink" href="#link-time-optimization" title="Permalink to this headline">¶</a></h3>
+<p>Link Time Optimization (LTO) is an optimization technique of intermodular
+optimization performed during the link stage.</p>
+</div>
+<div class="section" id="compiler-optimization-options">
+<h3>Compiler Optimization Options<a class="headerlink" href="#compiler-optimization-options" title="Permalink to this headline">¶</a></h3>
+<p>To increase the performance of the code, use the following compiler optimizing
+options:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">Hinline_threshold</span></code></li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">Haggressive_unroll</span></code></li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">Hmisched</span></code></li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">Hunswitch</span></code></li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">Hmax_predicate</span></code></li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">Hdense_prologue</span></code></li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">fslp-vectorize-aggressive</span></code></li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">funroll-loops</span></code></li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">Hon=Zd_loops</span></code></li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">Hoff=Zd_loops</span></code></li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">Hinlsize</span></code></li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">Hunroll</span></code></li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">Hloop_sms</span></code></li>
+</ul>
+</div></blockquote>
+<p>For more details, see [1] in <a class="reference internal" href="../Getting_started/Getting_started.html#refs"><span class="std std-ref">References</span></a>.</p>
+</div>
+<div class="section" id="hmerge">
+<h3>Hmerge<a class="headerlink" href="#hmerge" title="Permalink to this headline">¶</a></h3>
+<p>This optimization option is similar to LTO. The difference
+is Hmerge occurs at the compilation stage, not at the linking
+stage. In this case, all the source code is collected in a
+single object file.</p>
+</div>
+</div>
+<div class="section" id="supported-codecs">
+<h2>Supported Codecs<a class="headerlink" href="#supported-codecs" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">ETSI/3GPP codecs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="GSM-FR_README.html">GSM-FR Codec</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="GSM-FR_README.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GSM-FR_README.html#source-code">Source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GSM-FR_README.html#multi-instance-and-reentrance">Multi-instance and reentrance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GSM-FR_README.html#codec-specific-build-options">Codec-Specific Build Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GSM-FR_README.html#codec-specific-run-time-options">Codec-Specific Run-Time Options</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">ITU-T G codecs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="G_711_README.html">G.711</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="G_711_README.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="G_711_README.html#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="G_711_README.html#multi-instance-and-reentrance">Multi-instance and reentrance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="G_711_README.html#codec-specific-build-options">Codec-Specific Build Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="G_722_README.html">G.722 Appendix IV</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="G_722_README.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="G_722_README.html#source-code">Source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="G_722_README.html#multi-instance-and-reentrance">Multi-instance and reentrance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="G_722_README.html#codec-specific-build-options">Codec Specific Build Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="G_722_README.html#codec-specific-run-time-options">Codec-Specific Run-Time Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="G_726_README.html">G.726</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="G_726_README.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="G_726_README.html#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="G_726_README.html#multi-instance-and-reentrance">Multi-instance and reentrance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="G_726_README.html#codec-specific-build-options">Codec-Specific Build Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="G_726_README.html#codec-specific-run-time-options">Codec-Specific Run-Time Options</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Others:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="BT-CVSD_README.html">BT-CVSD Codec</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BT-CVSD_README.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BT-CVSD_README.html#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BT-CVSD_README.html#upsampling-and-downsampling">Upsampling and Downsampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BT-CVSD_README.html#multi-instance-and-reentrance">Multi-instance and reentrance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BT-CVSD_README.html#codec-specific-build-options">Codec-Specific Build Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BT-CVSD_README.html#codec-specific-run-time-options">Codec-Specific Run-time Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="LDAC_encoder_README.html">LDAC Encoder</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="LDAC_encoder_README.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LDAC_encoder_README.html#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LDAC_encoder_README.html#multi-instance-and-reentrance">Multi-instance and reentrance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LDAC_encoder_README.html#codec-specific-build-options">Codec-Specific Build Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LDAC_encoder_README.html#codec-specific-run-time-options">Codec-Specific Run-Time Options</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="GSM-FR_README.html" class="btn btn-neutral float-right" title="GSM-FR Codec" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../Getting_started/Getting_started.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Synopsys, Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

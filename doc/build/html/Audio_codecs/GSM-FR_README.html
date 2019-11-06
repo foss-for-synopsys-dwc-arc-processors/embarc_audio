@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GSM-FR Codec &mdash; embARC Audio Codecs 1.00 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="G.711" href="G_711_README.html" />
+    <link rel="prev" title="Audio Codecs" href="Audio_codecs.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../Home_page.html" class="icon icon-home"> embARC Audio Codecs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Overview/Overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Getting_started/Getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Audio_codecs.html">Audio Codecs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Audio_codecs.html#codecs-supported-by-embarc-audio">Codecs Supported by embARC Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Audio_codecs.html#optimizations">Optimizations</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Audio_codecs.html#supported-codecs">Supported Codecs</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">GSM-FR Codec</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#source-code">Source code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multi-instance-and-reentrance">Multi-instance and reentrance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#codec-specific-build-options">Codec-Specific Build Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#codec-specific-run-time-options">Codec-Specific Run-Time Options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="G_711_README.html">G.711</a></li>
+<li class="toctree-l3"><a class="reference internal" href="G_722_README.html">G.722 Appendix IV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="G_726_README.html">G.726</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BT-CVSD_README.html">BT-CVSD Codec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LDAC_encoder_README.html">LDAC Encoder</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../Home_page.html">embARC Audio Codecs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../Home_page.html">Docs</a> &raquo;</li>
+        
+          <li><a href="Audio_codecs.html">Audio Codecs</a> &raquo;</li>
+        
+      <li>GSM-FR Codec</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Audio_codecs/GSM-FR_README.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gsm-fr-codec">
+<h1>GSM-FR Codec<a class="headerlink" href="#gsm-fr-codec" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Full Rate (<a class="reference external" href="http://www.quut.com/gsm/">GSM-FR</a>) is the first
+digital speech coding standard used in the GSM digital mobile phone
+system. The bit rate of this codec is 13 kbit/s, or 1.625 bits/audio
+sample (often padded out to 33 bytes/20 ms or 13.2 kbit/s).</p>
+</div>
+<div class="section" id="source-code">
+<h2>Source code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<p>The source code is based on the original GSM-FR code (<a class="reference external" href="http://www.quut.com/gsm/">3GPP TS
+06.10</a>) created by Jutta Degener and
+Carsten Bormann, Technische Universitaet Berlin, and then updated to 18
+pathlevel. The Application of this codec is to get RPE-LTP from
+<a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/G722/tree/master/rpeltp">G722</a>, commit eddb5a231b51,
+and
+<a class="reference external" href="https://github.com/foss-for-synopsys-dwc-arc-processors/G722/tree/master/g711">G711</a>, same commit,
+for α-law and µ-law compression. Test sequences are taken
+from <a class="reference external" href="http://www.3gpp.org/ftp/Specs/archive/06_series/06.10/0610-820.zip">3GPP TS
+06.10</a>
+version 8.2.0 Release 99, June 2001, and this codec passses the test cases successfully.</p>
+</div>
+<div class="section" id="multi-instance-and-reentrance">
+<h2>Multi-instance and reentrance<a class="headerlink" href="#multi-instance-and-reentrance" title="Permalink to this headline">¶</a></h2>
+<p>Codec hasn’t tested on multi-instance run, for more information about support of
+multi-instance run see codec source documentation. Codec supports reentrance
+in case if the value of <code class="xref py py-exc docutils literal notranslate"><span class="pre">DSP_CTRL</span></code> register, AGU address pointer registers (<code class="xref py py-exc docutils literal notranslate"><span class="pre">AGU_AUX_APx</span></code>),
+AGU offset registers (<code class="xref py py-exc docutils literal notranslate"><span class="pre">AGU_AUX_OSx</span></code>), AGU modifier registers (<code class="xref py py-exc docutils literal notranslate"><span class="pre">AGU_AUX_MODx</span></code>)
+and accumulators registers (<code class="xref py py-exc docutils literal notranslate"><span class="pre">ACC0_LO</span></code>, <code class="xref py py-exc docutils literal notranslate"><span class="pre">ACC0_HI</span></code>, <code class="xref py py-exc docutils literal notranslate"><span class="pre">ACC0_GLO</span></code> and <code class="xref py py-exc docutils literal notranslate"><span class="pre">ACC0_GHI</span></code>
+in case of guard mode is on), see [1] in <a class="reference internal" href="../Getting_started/Getting_started.html#refs"><span class="std std-ref">References</span></a>, will be saved and restored.</p>
+</div>
+<div class="section" id="codec-specific-build-options">
+<h2>Codec-Specific Build Options<a class="headerlink" href="#codec-specific-build-options" title="Permalink to this headline">¶</a></h2>
+<p><code class="xref py py-exc docutils literal notranslate"><span class="pre">LTO_BUILD</span></code> and <code class="xref py py-exc docutils literal notranslate"><span class="pre">REMAPITU_T</span></code> options are enabled for this codec by default.</p>
+</div>
+<div class="section" id="codec-specific-run-time-options">
+<h2>Codec-Specific Run-Time Options<a class="headerlink" href="#codec-specific-run-time-options" title="Permalink to this headline">¶</a></h2>
+<p>To run GSM-FR codec in MetaWare Debugger (See [2] in <a class="reference internal" href="../Getting_started/Getting_started.html#refs"><span class="std std-ref">References</span></a>) use the following commands:</p>
+<p>For GSM-FR codec:</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mdb</span> <span class="o">-</span><span class="n">cl</span> <span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">nsim</span> <span class="o">-</span><span class="n">tcf</span><span class="o">=&lt;</span><span class="n">default</span> <span class="n">TCF</span> <span class="kn">from</span> <span class="o">/</span><span class="n">rules</span><span class="o">/</span><span class="n">common_hw_config</span><span class="o">.</span><span class="n">mk</span><span class="o">&gt;</span> <span class="n">ARC_FR_CODEC_app</span><span class="o">.</span><span class="n">elf</span> <span class="o">&lt;</span><span class="n">number</span> <span class="n">of</span> <span class="n">frames</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">-</span><span class="n">l</span><span class="o">|-</span><span class="n">u</span><span class="o">|-</span><span class="n">A</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">enc</span><span class="o">|-</span><span class="n">dec</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">input_file</span><span class="o">.</span><span class="n">inp</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">output_file</span><span class="o">.</span><span class="n">cod</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">BlockSize</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="mi">1</span><span class="n">stBlock</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">NoOfBlocks</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>The following table lists the parameters for this codec:</p>
+<table border="1" class="colwidths-given docutils align-center" id="id1">
+<caption><span class="caption-text">Command-Line Options Descriptions for GSM-FR Encoder</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Option</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;input_file.inp&gt;</span></code></td>
+<td>Specifies the input *.inp file</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;output_file.cod&gt;</span></code></td>
+<td>Specifies the output *.cod file</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-l</span></code></td>
+<td>Input data for encoding and
+output data for decoding are in
+linear format (DEFAULT)</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-A</span></code></td>
+<td>Input data for encoding and
+output data for decoding are in
+α-law (G.711) format</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-u</span></code></td>
+<td>Input data for encoding and
+output data for decoding are in
+µ-law (G.711) format</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;BlockSize&gt;</span></code></td>
+<td>Block size, in number of
+samples (default = 160)
+(optional)</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;1stBlock&gt;</span></code></td>
+<td>Number of the first block
+of the input file to be processed
+(optional)</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;NoOfBlocks&gt;</span></code></td>
+<td>Number of blocks to be
+processed, starting with block
+&lt;1stBlock&gt;</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;number</span> <span class="pre">of</span> <span class="pre">frames&gt;</span></code></td>
+<td>Number of frames to be processed
+(optional)</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-enc</span></code></td>
+<td>Run only the encoder</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="colwidths-given docutils align-center" id="id2">
+<caption><span class="caption-text">Command-Line Options Descriptions for GSM-FR Decoder</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Option</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;input_file.cod&gt;</span></code></td>
+<td>Specifies the input *.cod file</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;output_file.out&gt;</span></code></td>
+<td>Specifies the output *.out file</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-l</span></code></td>
+<td>Input data for encoding and
+output data for decoding are in
+linear format (DEFAULT)</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-A</span></code></td>
+<td>Input data for encoding and
+output data for decoding are in
+α-law (G.711) format</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-u</span></code></td>
+<td>Input data for encoding and
+output data for decoding are in
+µ-law (G.711) format</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;BlockSize&gt;</span></code></td>
+<td>Block size, in number of
+samples (default = 160)
+(optional)</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;1stBlock&gt;</span></code></td>
+<td>Number of the first block
+of the input file to be processed
+(optional)</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;NoOfBlocks&gt;</span></code></td>
+<td>Number of blocks to be
+processed, starting with block
+&lt;1stBlock&gt;</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;number</span> <span class="pre">of</span> <span class="pre">frames&gt;</span></code></td>
+<td>Number of frames to be processed
+(optional)</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-dec</span></code></td>
+<td>Run only the decoder</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<p>The following command encodes the linear <strong>Seq01.inp</strong> stream:</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mdb</span> <span class="o">-</span><span class="n">cl</span> <span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">nsim</span> <span class="o">-</span><span class="n">tcf</span><span class="o">=</span><span class="n">em9d_voice_audio</span> <span class="n">ARC_FR_CODEC_app</span><span class="o">.</span><span class="n">elf</span> <span class="o">-</span><span class="n">l</span> <span class="o">-</span><span class="n">enc</span> <span class="o">../</span><span class="n">testvectors</span><span class="o">/</span><span class="n">ref</span><span class="o">/</span><span class="n">Seq01</span><span class="o">.</span><span class="n">inp</span> <span class="o">../</span><span class="n">testvectors</span><span class="o">/</span><span class="n">Seq01</span><span class="o">.</span><span class="n">cod</span>
+</pre></div>
+</div>
+<p>The following command decodes the linear <strong>Seq01.cod</strong> stream without any additional options:</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mdb</span> <span class="o">-</span><span class="n">cl</span> <span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">nsim</span> <span class="o">-</span><span class="n">tcf</span><span class="o">=</span><span class="n">em9d_voice_audio</span> <span class="n">ARC_FR_CODEC_app</span><span class="o">.</span><span class="n">elf</span> <span class="o">-</span><span class="n">l</span> <span class="o">-</span><span class="n">dec</span> <span class="o">../</span><span class="n">testvectors</span><span class="o">/</span><span class="n">ref</span><span class="o">/</span><span class="n">Seq01</span><span class="o">.</span><span class="n">cod</span> <span class="o">../</span><span class="n">testvectors</span><span class="o">/</span><span class="n">Seq01</span><span class="o">.</span><span class="n">out</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="G_711_README.html" class="btn btn-neutral float-right" title="G.711" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Audio_codecs.html" class="btn btn-neutral float-left" title="Audio Codecs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Synopsys, Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

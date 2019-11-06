@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>G.711 &mdash; embARC Audio Codecs 1.00 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="G.722 Appendix IV" href="G_722_README.html" />
+    <link rel="prev" title="GSM-FR Codec" href="GSM-FR_README.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../Home_page.html" class="icon icon-home"> embARC Audio Codecs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Overview/Overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Getting_started/Getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Audio_codecs.html">Audio Codecs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Audio_codecs.html#codecs-supported-by-embarc-audio">Codecs Supported by embARC Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Audio_codecs.html#optimizations">Optimizations</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Audio_codecs.html#supported-codecs">Supported Codecs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="GSM-FR_README.html">GSM-FR Codec</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">G.711</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#source-code">Source Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multi-instance-and-reentrance">Multi-instance and reentrance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#codec-specific-build-options">Codec-Specific Build Options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="G_722_README.html">G.722 Appendix IV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="G_726_README.html">G.726</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BT-CVSD_README.html">BT-CVSD Codec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LDAC_encoder_README.html">LDAC Encoder</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../Home_page.html">embARC Audio Codecs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../Home_page.html">Docs</a> &raquo;</li>
+        
+          <li><a href="Audio_codecs.html">Audio Codecs</a> &raquo;</li>
+        
+      <li>G.711</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Audio_codecs/G_711_README.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="g-711">
+<h1>G.711<a class="headerlink" href="#g-711" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.itu.int/rec/recommendation.asp?lang=en&amp;parent=T-REC-G.711-198811-I">G.711</a>
+is an ITU-T standard for audio companding: Pulse code modulation
+(PCM) of voice frequencies.</p>
+</div>
+<div class="section" id="source-code">
+<h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<p>This codec is based on the original <a class="reference external" href="https://www.itu.int/rec/recommendation.asp?lang=en&amp;parent=T-REC-G.711-198811-I">G.711</a>,
+25 November 1988, corresponding ANSI-C code is available in the G.711 module of the <a class="reference external" href="https://www.itu.int/rec/T-REC-G.191/en">ITU-T G.191</a> Software Tools Library, 13 January 2019,
+and this codec passses the test cases successfully.</p>
+</div>
+<div class="section" id="multi-instance-and-reentrance">
+<h2>Multi-instance and reentrance<a class="headerlink" href="#multi-instance-and-reentrance" title="Permalink to this headline">¶</a></h2>
+<p>Codec hasn’t tested on multi-instance run, for more information about support of
+multi-instance run see codec source documentation. Codec supports reentrance
+in case if AGU address pointer registers (<code class="xref py py-exc docutils literal notranslate"><span class="pre">AGU_AUX_APx</span></code>), AGU offset registers (<code class="xref py py-exc docutils literal notranslate"><span class="pre">AGU_AUX_OSx</span></code>),
+AGU modifier registers (<code class="xref py py-exc docutils literal notranslate"><span class="pre">AGU_AUX_MODx</span></code>), see [1] in <a class="reference internal" href="../Getting_started/Getting_started.html#refs"><span class="std std-ref">References</span></a>, will be saved and restored.</p>
+</div>
+<div class="section" id="codec-specific-build-options">
+<h2>Codec-Specific Build Options<a class="headerlink" href="#codec-specific-build-options" title="Permalink to this headline">¶</a></h2>
+<p><code class="xref py py-exc docutils literal notranslate"><span class="pre">LTO_BUILD</span></code> and <code class="xref py py-exc docutils literal notranslate"><span class="pre">REMAPITU_T</span></code> options are not available for this codec. Use the following command to build the G.711 codec:</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mdb</span> <span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">cl</span> <span class="o">-</span><span class="n">nsim</span> <span class="o">-</span><span class="n">tcf</span><span class="o">=&lt;</span><span class="n">default</span> <span class="n">TCF</span> <span class="kn">from</span> <span class="o">/</span><span class="n">rules</span><span class="o">/</span><span class="n">common_hw_config</span><span class="o">.</span><span class="n">mk</span><span class="o">&gt;</span> <span class="n">g711demo</span><span class="o">.</span><span class="n">elf</span> <span class="o">&lt;</span><span class="n">number</span> <span class="n">of</span> <span class="n">frames</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">u</span><span class="o">|</span><span class="n">A</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">r</span><span class="p">]</span> <span class="p">[</span><span class="n">lili</span><span class="o">|</span><span class="n">loli</span><span class="o">|</span><span class="n">lilo</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">input_file</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">output_file</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">BlockSize</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="mi">1</span><span class="n">stBlock</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">NoOfBlocks</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">-</span><span class="n">skip</span> <span class="n">n</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The following table lists the G.711 codec parameters</p>
+<table border="1" class="colwidths-given docutils align-center" id="id1">
+<caption><span class="caption-text">Command-Line Option Descriptions for G.711 Codec</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Option</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;input_file&gt;</span></code></td>
+<td>Specifies the input file</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;output_file&gt;</span></code></td>
+<td>Specifies the output file</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-r</span></code></td>
+<td>Disables even-bit swap by A-law
+encoding and decoding (DEFAULT)</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">A</span></code></td>
+<td>Input data for encoding and
+output data for decoding are in
+α-law (G.711) format</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">u</span></code></td>
+<td>Input data for encoding and
+output data for decoding are in
+µ-law (G.711) format</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">lili</span></code></td>
+<td>Convert the input file
+linear to linear: lin -&gt; (A/u)log
+-&gt; lin</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">lilo</span></code></td>
+<td>Convert the input file
+linear to (A/u)-log</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">loli</span></code></td>
+<td>Convert the input file
+(A/u) log to linear</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;BlockSize&gt;</span></code></td>
+<td>Number of samples per block
+[256] (optional)</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;1stBlock&gt;</span></code></td>
+<td>Number of the first block
+of the input file to be processed
+(optional)</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;NoOfBlocks&gt;</span></code></td>
+<td>Number of blocks to
+process, starting with block
+&lt;1stBlock&gt;</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-skip</span> <span class="pre">*n*</span></code></td>
+<td><em>n</em> is the number of samples to
+skip (optional)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<p>The following command converts the linear samples to A-law log:</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mdb</span> <span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">cl</span> <span class="o">-</span><span class="n">nsim</span> <span class="o">-</span><span class="n">tcf</span><span class="o">=</span><span class="n">em9d_voice_audio</span> <span class="n">g711demo</span><span class="o">.</span><span class="n">elf</span> <span class="n">A</span> <span class="n">lilo</span> <span class="o">../</span><span class="n">testvectors</span><span class="o">/</span><span class="n">Ref</span><span class="o">/</span><span class="n">sweep</span><span class="o">.</span><span class="n">src</span> <span class="o">../</span><span class="n">testvectors</span><span class="o">/</span><span class="n">sweep</span><span class="o">-</span><span class="n">r</span><span class="o">.</span><span class="n">a</span> <span class="mi">256</span> <span class="mi">1</span> <span class="mi">256</span>
+</pre></div>
+</div>
+<p>The following command converts from A-law log to linear samples:</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mdb</span> <span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">cl</span> <span class="o">-</span><span class="n">nsim</span> <span class="o">-</span><span class="n">tcf</span><span class="o">=</span><span class="n">em9d_voice_audio</span> <span class="n">g711demo</span><span class="o">.</span><span class="n">elf</span> <span class="n">A</span> <span class="n">loli</span> <span class="o">../</span><span class="n">testvectors</span><span class="o">/</span><span class="n">Ref</span><span class="o">/</span><span class="n">sweep</span><span class="o">-</span><span class="n">r</span><span class="o">.</span><span class="n">a</span> <span class="o">../</span><span class="n">testvectors</span><span class="o">/</span><span class="n">sweep</span><span class="o">.</span><span class="n">src</span> <span class="mi">256</span> <span class="mi">1</span> <span class="mi">256</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="G_722_README.html" class="btn btn-neutral float-right" title="G.722 Appendix IV" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="GSM-FR_README.html" class="btn btn-neutral float-left" title="GSM-FR Codec" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Synopsys, Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

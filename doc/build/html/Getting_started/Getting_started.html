@@ -1,0 +1,519 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; embARC Audio Codecs 1.00 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Audio Codecs" href="../Audio_codecs/Audio_codecs.html" />
+    <link rel="prev" title="Overview" href="../Overview/Overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../Home_page.html" class="icon icon-home"> embARC Audio Codecs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Overview/Overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#required-tools">Required Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clone-repository">Clone Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-and-run">Build and Run</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#makefile-commands">Makefile Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-directory-structure-for-specific-audio-codec">Build Directory Structure for Specific Audio Codec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-parameters">Build Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-parameters">Run Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#test-sequences">Test Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modify-the-hardware-configuration-file">Modify the Hardware Configuration File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Audio_codecs/Audio_codecs.html">Audio Codecs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../Home_page.html">embARC Audio Codecs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../Home_page.html">Docs</a> &raquo;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Getting_started/Getting_started.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="required-tools">
+<h2>Required Tools<a class="headerlink" href="#required-tools" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Installed MetaWare Development Toolkit P-2019.06 or newer</li>
+<li>Valid license for MetaWare Development Compiler and Debugger</li>
+</ol>
+</div>
+<div class="section" id="clone-repository">
+<h2>Clone Repository<a class="headerlink" href="#clone-repository" title="Permalink to this headline">¶</a></h2>
+<p>Clone repository to the <code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;target_build&gt;/</span></code> folder</p>
+</div>
+<div class="section" id="build-and-run">
+<h2>Build and Run<a class="headerlink" href="#build-and-run" title="Permalink to this headline">¶</a></h2>
+<p>To build and run the codec, follow these steps:</p>
+<ol class="arabic simple">
+<li>Navigate to the audio codec directory: <code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;target_build&gt;/&lt;codec_name&gt;/make</span></code></li>
+<li>Type the following commands:</li>
+</ol>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmake</span> <span class="n">cleanall</span>
+<span class="n">gmake</span> <span class="nb">all</span>
+<span class="n">gmake</span> <span class="n">run</span>
+</pre></div>
+</div>
+<p>In step 2 -</p>
+<blockquote>
+<div><ul class="simple">
+<li>The first command cleans all intermediate and target files.</li>
+<li>The second command builds both static and dynamic libraries.
+Test application executable file is <code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;test_app_executable&gt;.elf</span></code>.</li>
+<li>The third command runs the application with default command line parameters.</li>
+</ul>
+</div></blockquote>
+<p>If the execution is successful, the output log contains the string
+<code class="xref py py-exc docutils literal notranslate"><span class="pre">FC:</span> <span class="pre">no</span> <span class="pre">differences</span> <span class="pre">encountered</span></code></p>
+<div class="section" id="makefile-commands">
+<h3>Makefile Commands<a class="headerlink" href="#makefile-commands" title="Permalink to this headline">¶</a></h3>
+<p>The following table lists available Makefile commands:</p>
+<table border="1" class="colwidths-given docutils align-center" id="id1">
+<caption><span class="caption-text">Makefile Commands</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">gmake</span></code>
+<code class="xref py py-exc docutils literal notranslate"><span class="pre">gmake</span> <span class="pre">all</span></code></td>
+<td>These commands build both
+archive and static
+libraries and test
+application executable
+files</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">gmake</span> <span class="pre">lib</span></code></td>
+<td>This command builds both
+archive and static
+libraries</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">gmake</span> <span class="pre">app</span></code></td>
+<td>This command builds test
+application executable
+files</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">gmake</span> <span class="pre">clean</span></code></td>
+<td>This command cleans all
+intermediate files</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">gmake</span> <span class="pre">cleanall</span></code></td>
+<td>This command cleans all
+intermediate and target
+files</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">gmake</span> <span class="pre">size</span></code></td>
+<td>This command shows size of
+sections used by the static
+library or size of ELF if
+build with LTO</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">gmake</span> <span class="pre">run</span></code>
+<code class="xref py py-exc docutils literal notranslate"><span class="pre">[gmake</span> <span class="pre">run_encoder]</span></code>
+<code class="xref py py-exc docutils literal notranslate"><span class="pre">[gmake</span> <span class="pre">run_decoder]</span></code></td>
+<td>These commands run test
+application (or only
+encoder/decoder, the
+presence of these commands
+depends on specific codec)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="build-directory-structure-for-specific-audio-codec">
+<h3>Build Directory Structure for Specific Audio Codec<a class="headerlink" href="#build-directory-structure-for-specific-audio-codec" title="Permalink to this headline">¶</a></h3>
+<p>The following table represents the directory structure for the
+build-related files and the associated documents (all codecs have the
+same directory structure):</p>
+<table border="1" class="colwidths-given docutils align-center" id="id2">
+<caption><span class="caption-text">Directory Structure for Specific Audio Codec</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Directory</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>include</td>
+<td>Header files</td>
+</tr>
+<tr class="row-odd"><td>lib</td>
+<td>Libraries</td>
+</tr>
+<tr class="row-even"><td>make</td>
+<td>Makefiles and executable files</td>
+</tr>
+<tr class="row-odd"><td>obj</td>
+<td>Object files</td>
+</tr>
+<tr class="row-even"><td>src</td>
+<td>Codec source files</td>
+</tr>
+<tr class="row-odd"><td>test</td>
+<td>Test applications source files</td>
+</tr>
+<tr class="row-even"><td>testvectors</td>
+<td>Test vectors</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="build-parameters">
+<h3>Build Parameters<a class="headerlink" href="#build-parameters" title="Permalink to this headline">¶</a></h3>
+<p>To build the library with your own parameters, use the following command:</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmake</span> <span class="nb">all</span> <span class="o">&lt;</span><span class="n">common_parameters</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">specific_parameters</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>where:</dt>
+<dd><p class="first"><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;common_parameters&gt;</span></code> are the build parameters that are common to all codecs.</p>
+<p class="last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;specific_parameters&gt;</span></code> are the build parameters that are specific to each codec.</p>
+</dd>
+</dl>
+<p>See the codec-specific documentation for more details.</p>
+<p>The following table enlists the common parameters for codecs:</p>
+<table border="1" class="colwidths-given docutils align-center" id="id3">
+<caption><span class="caption-text">Common Build Parameters for All Codecs</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Option</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">TCF=&lt;platform&gt;</span></code></td>
+<td>Specifies the target platform
+template</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">LTO_BUILD=&lt;on/off&gt;</span></code></td>
+<td>Turn on/off Link-time
+optimization</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">REMAPITU_T=&lt;on/off&gt;</span></code></td>
+<td>Turn on/off remapping for ITU_T
+basop (except LDAC encoder).
+Accumulator preshift option
+(<code class="xref py py-exc docutils literal notranslate"><span class="pre">-Xdsp_itu</span></code>) is necessary,
+with <code class="xref py py-exc docutils literal notranslate"><span class="pre">REMAPITU_T=on</span></code>. If it
+is not supported by default you
+should add -Xdsp_itu into CFLAGS
+(For example,
+<code class="xref py py-exc docutils literal notranslate"><span class="pre">CFLAGS+=</span> <span class="pre">-Xdsp_itu</span></code>)</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">DEBUG_MODE=&lt;on/off&gt;</span></code></td>
+<td>Turn on/off debug mode (<code class="xref py py-exc docutils literal notranslate"><span class="pre">-g</span></code>
+<code class="xref py py-exc docutils literal notranslate"><span class="pre">-Hanno</span></code> <code class="xref py py-exc docutils literal notranslate"><span class="pre">-Hkeepasm</span></code> )
+See [1] in <a class="reference internal" href="#refs"><span class="std std-ref">References</span></a>.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Code was tested with following hardware templates:</dt>
+<dd><ul class="first last simple">
+<li>em5d voice audio</li>
+<li>em7d voice audio</li>
+<li>em9d voice audio</li>
+<li>em11d voice audio</li>
+<li>hs45d voice audio</li>
+</ul>
+</dd>
+</dl>
+<p>The following is an example of a command to build a codec without <a class="reference internal" href="../Audio_codecs/Audio_codecs.html#lto"><span class="std std-ref">Link Time Optimization</span></a>, legacy
+basop32 library under EM9D voice audio platform:</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmake</span> <span class="nb">all</span> <span class="n">TCF</span><span class="o">=</span><span class="n">em9d_voice_audio</span> <span class="n">LTO_BUILD</span><span class="o">=</span><span class="n">off</span> <span class="n">REMAPITU_T</span><span class="o">=</span><span class="n">off</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-parameters">
+<h3>Run Parameters<a class="headerlink" href="#run-parameters" title="Permalink to this headline">¶</a></h3>
+<p>To run the codec test application with your own parameters, use the following command:</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mdb</span> <span class="o">&lt;</span><span class="n">mdb</span> <span class="n">parameters</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">test_app_executable</span><span class="o">&gt;.</span><span class="n">elf</span> <span class="o">&lt;</span><span class="n">test_app_executable_params</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>where:</p>
+<blockquote>
+<div><p><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;mdb_parameters&gt;</span></code> are debugger/platform parameters, which may include:</p>
+<ul class="simple">
+<li>details of platform configuration for software simulator</li>
+<li>paths to drivers and details of JTAG interface configuration.</li>
+</ul>
+<p>These parameters do not depend on the particular codec component specifics,
+except hardware configuration that must match the hardware expected by the
+component.</p>
+</div></blockquote>
+<p>For documentation on details on MDB and relevant software and hardware
+configuration, see [2] and [3] in <a class="reference internal" href="#refs"><span class="std std-ref">References</span></a>.</p>
+<p><strong>&lt;test_app_executable&gt;.elf</strong> is a binary image of an executable file to
+be loaded by the debugger.</p>
+<p><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;test_app_executable_params&gt;</span></code> is a command line for the test
+application. Details of the test application command lines depend on the
+particular test application, and do not depend on the MDB/hardware
+configuration. Usually, these parameters provide test-application
+specific information, such as I/O file names and information of their
+format interpretation and codec-specific configuration information. For
+details on command lines for specific codec test applications, see
+the command line option descriptions of the test application in
+the subsequent sections. Additionally, see the Reference guide document
+for codec-specific structure fields of an individual component.</p>
+<p><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;mdb</span> <span class="pre">parameters&gt;</span></code> usually is <code class="xref py py-exc docutils literal notranslate"><span class="pre">-run</span> <span class="pre">-cl</span> <span class="pre">-nsim</span></code> as shown in the following sample command:</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mbd</span> <span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">cl</span> <span class="o">-</span><span class="n">nsim</span> <span class="o">&lt;</span><span class="n">test_app_executable</span><span class="o">&gt;.</span><span class="n">elf</span> <span class="o">&lt;</span><span class="n">test_app_executable_params</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>To invoke GUI interface of debugger, omit options -run and -cl:</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mbd</span> <span class="o">-</span><span class="n">nsim</span> <span class="o">&lt;</span><span class="n">test_app_executable</span><span class="o">&gt;.</span><span class="n">elf</span> <span class="o">&lt;</span><span class="n">test_app_executable_params</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>For more information about build and run options, see the codec-specific
+documentation.</p>
+</div>
+</div>
+<div class="section" id="test-sequences">
+<h2>Test Sequences<a class="headerlink" href="#test-sequences" title="Permalink to this headline">¶</a></h2>
+<p>Some codecs have test sequences for checking the bit-exactitude of the
+result: G.711, G.722, G.726, GSM-FR. All of them
+completely passed the given test sequences on the <a class="reference external" href="#build-parameters">specified
+platforms</a>.</p>
+</div>
+<div class="section" id="modify-the-hardware-configuration-file">
+<h2>Modify the Hardware Configuration File<a class="headerlink" href="#modify-the-hardware-configuration-file" title="Permalink to this headline">¶</a></h2>
+<p>After unpacking archives, edit the hardware configuration file located
+in <strong>&lt;target_build&gt;/rules/common_hw_config.mk</strong> to ensure that it
+corresponds to the target hardware platform.</p>
+<p>The default hardware platform is specified by one of the standard tcf
+files provided by MetaWare. Each core has a separate TCF file. For
+example:
+<code class="xref py py-exc docutils literal notranslate"><span class="pre">-tcf=hs45d_voice_audio</span></code></p>
+<p>If the target hardware platform differs from the default, best practice
+is to use a reference to the TCF file generated by the
+ARChitect for your project:
+<code class="xref py py-exc docutils literal notranslate"><span class="pre">-tcf=/build/tool_config/arc.tcf</span></code></p>
+<p>Usage of low-level hardware configuration options in <strong>&lt;target_build&gt;/rules/common_hw_config.mk</strong> file
+(like <code class="xref py py-exc docutils literal notranslate"><span class="pre">-Xbarrel_shifter</span></code>) is possible but not recommended. In this case,
+the corresponding C/C++ Preprocessor macro definitions are required for
+successfully building the codec. (For example, <code class="xref py py-exc docutils literal notranslate"><span class="pre">-Dcore_config_barrel_shifter=1</span></code>).</p>
+<p>Additionally, the key option <code class="xref py py-exc docutils literal notranslate"><span class="pre">-tcf_core_config</span></code> automatically enables all hardware
+related C/C++ preprocessor macro definitions when using TCF and
+you should not explicitly define them. See MetaWare the Debugger
+documentation for more details.</p>
+<p>The option <code class="xref py py-exc docutils literal notranslate"><span class="pre">-tcf</span></code> specifies the tool configuration file that is generated
+when you build a processor by using the ARChitect configuration tool that
+uses a newer version of the ARC IP libraries. The TCF file
+encapsulates the information that development tools need, to support a
+given processor build into a single file. After you have built the
+processor using the ARChitect tool, the TCF file is created in the
+following location of your ARChitect processor project
+folder:<strong>&lt;hardware_platform_project&gt;/build/tool_config/arc.tcf</strong>.
+For more details, see the MetaWare Debugger documentation.</p>
+</div>
+<div class="section" id="references">
+<span id="refs"></span><h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>DesignWare® C/C++ Programmer’s Guide for the ccac Compiler for the
+ARC EM, ARC HS and EV6x Processors</li>
+<li>DesignWare® MetaWare Debugger User’s Guide for ARC EM, ARC HS, and
+EV6x Processors</li>
+<li>DesignWare® MetaWare Toolkit Quick Start Guide For ARC EM, ARC HS,
+and EV6x Processors</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Audio_codecs/Audio_codecs.html" class="btn btn-neutral float-right" title="Audio Codecs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../Overview/Overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Synopsys, Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

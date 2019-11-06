@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview &mdash; embARC Audio Codecs 1.00 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting Started" href="../Getting_started/Getting_started.html" />
+    <link rel="prev" title="embARC Audio" href="../Home_page.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../Home_page.html" class="icon icon-home"> embARC Audio Codecs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#about-the-project">About the Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#out-of-the-box-optimizations">Out-Of-the Box Optimizations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#terms-and-definitions">Terms and definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#copyright">Copyright</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Getting_started/Getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Audio_codecs/Audio_codecs.html">Audio Codecs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../Home_page.html">embARC Audio Codecs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../Home_page.html">Docs</a> &raquo;</li>
+        
+      <li>Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Overview/Overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="overview">
+<span id="id1"></span><h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<span id="intro"></span><h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="about-the-project">
+<h3>About the Project<a class="headerlink" href="#about-the-project" title="Permalink to this headline">¶</a></h3>
+<p>ARC DSP and the MetaWare tools provide means to address different
+scenarios through different options.</p>
+<p>The required code transformations can be different, depending on the
+type and quality of reference code and the desired result (optimization
+targets) and thus require different development effort.</p>
+<p>Out-of-the box optimization (OOB) technique targets minimal effort with
+reasonable performance gain.</p>
+<p>Targeting better optimizations requires more code transformations and
+deeper optimizations:</p>
+<ul class="simple">
+<li>Algorithmic optimizations, including changing the precision of output
+(if applicable)</li>
+<li>Data flow and memory-mapping optimizations that minimize memory usage
+and access</li>
+<li>Utilization of FXAPI primitives for fractional operations and mapping
+of data types to enable usage of fractional DSP instructions by the
+compiler</li>
+<li>Re-writing code patterns, to make them more compiler and platform
+friendly. In particular:<ul>
+<li>Manual loop transformations (such as loops splitting to enable
+accumulator usage in MAC instructions)</li>
+<li>Using 32-bit data types (instead of accumulator data types) where
+multiple, frequently accessed variables are needed.</li>
+</ul>
+</li>
+</ul>
+<p>In general, 32-bit data types provide the best efficiency cycle-wise and
+code-size-wise.</p>
+<p>embARC Audio codec collection is an OOB (Out-Of-the Box) optimized library of speech and
+audio codecs for
+<a class="reference external" href="https://www.synopsys.com/designware-ip/processor-solutions/arc-processors/arc-dsp-solutions.html">ARCv2DSP</a>.</p>
+<p>For better optimization, contact Synopsys.</p>
+</div>
+<div class="section" id="out-of-the-box-optimizations">
+<h3>Out-Of-the Box Optimizations<a class="headerlink" href="#out-of-the-box-optimizations" title="Permalink to this headline">¶</a></h3>
+<p>Out-Of-the Box optimization (OOB optimization) technique usually
+achieves reasonable performance with minimal or no source code
+modifications and thus minimal effort. This typically includes following
+steps:</p>
+<ul>
+<li><p class="first">Replacing ETSI/ITU-T standard basop headers by Metware Development
+Toolkit provided and excluding from compilation basop sources (C files)</p>
+</li>
+<li><p class="first">Tuning the compiler options to find the best performance vs. code-size
+trade-offs. For global optimization, try <code class="xref py py-exc docutils literal notranslate"><span class="pre">-Hmerge</span></code> or <code class="xref py py-exc docutils literal notranslate"><span class="pre">-Hlto</span></code>:</p>
+<ul class="simple">
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">-Hmerge</span></code> requires compiling all files at once by specifying all C files
+in command line</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">-Hlto</span></code> (enables Link Time Optimization) allows file-by-file compilation
+and linking. It uses higher-level intermediate representation in object
+files instead of platform object code, allowing to proceed with global
+optimizations at the “linking” step</li>
+</ul>
+<p>Selection of the best options is an iterative step with several sets of
+options. For more details, see [1] in <a class="reference internal" href="../Getting_started/Getting_started.html#refs"><span class="std std-ref">References</span></a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="terms-and-definitions">
+<span id="terms-and-defs"></span><h2>Terms and definitions<a class="headerlink" href="#terms-and-definitions" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-agu">AGU</dt>
+<dd>Address Generation Unit</dd>
+<dt id="term-api">API</dt>
+<dd>Application Programming Interface</dd>
+<dt id="term-arc-emxd">ARC EMxD</dt>
+<dd>Family of 32-bit ARC Processor Cores. Single-core, 3-Step Pipeline, ARCv2DSP</dd>
+<dt id="term-arc-hs4xd">ARC HS4xD</dt>
+<dd>Family of 32-bit ARC Processor Cores. Multi-core, Dual-Issue, 10-Step Pipeline, ARCv2DSP</dd>
+<dt id="term-arcv2dsp">ARCv2DSP</dt>
+<dd>Synopsys DesignWare® ARC® Processors Family of 32-bit CPUs</dd>
+<dt id="term-ccac">CCAC</dt>
+<dd>MetaWare Compiler</dd>
+<dt id="term-dma">DMA</dt>
+<dd>Direct Memory Access</dd>
+<dt id="term-dsp">DSP</dt>
+<dd>Digital Signal Processor</dd>
+<dt id="term-fxapi">FXAPI</dt>
+<dd>Fixed-point API</dd>
+<dt id="term-lto">LTO</dt>
+<dd>Link-Time Optimization</dd>
+<dt id="term-mac">MAC</dt>
+<dd>Multiple Accumulate</dd>
+<dt id="term-mdb">MDB</dt>
+<dd>MetaWare Debugger</dd>
+<dt id="term-mpy">MPY</dt>
+<dd>Multiply Command</dd>
+<dt id="term-mwdt">MWDT</dt>
+<dd>MetaWare Development Toolset</dd>
+<dt id="term-nsim">nSIM</dt>
+<dd>Instruction Set Simulator</dd>
+<dt id="term-oob">OOB</dt>
+<dd>Out-Of-the Box</dd>
+<dt id="term-pcm">PCM</dt>
+<dd>Pulse Code Modulation</dd>
+<dt id="term-tcf">TCF</dt>
+<dd>Tool Configuration File. Holds information about ARC processor build configuration and extensions.</dd>
+<dt id="term-xcam">xCAM</dt>
+<dd>Cycle Accurate Model</dd>
+</dl>
+</div>
+<div class="section" id="copyright">
+<span id="id2"></span><h2>Copyright<a class="headerlink" href="#copyright" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Copyright TBD</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Getting_started/Getting_started.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../Home_page.html" class="btn btn-neutral float-left" title="embARC Audio" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Synopsys, Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

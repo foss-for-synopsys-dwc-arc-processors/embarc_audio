@@ -1,0 +1,330 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>BT-CVSD Codec &mdash; embARC Audio Codecs 1.00 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="LDAC Encoder" href="LDAC_encoder_README.html" />
+    <link rel="prev" title="G.726" href="G_726_README.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../Home_page.html" class="icon icon-home"> embARC Audio Codecs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Overview/Overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Getting_started/Getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Audio_codecs.html">Audio Codecs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Audio_codecs.html#codecs-supported-by-embarc-audio">Codecs Supported by embARC Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Audio_codecs.html#optimizations">Optimizations</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Audio_codecs.html#supported-codecs">Supported Codecs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="GSM-FR_README.html">GSM-FR Codec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="G_711_README.html">G.711</a></li>
+<li class="toctree-l3"><a class="reference internal" href="G_722_README.html">G.722 Appendix IV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="G_726_README.html">G.726</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">BT-CVSD Codec</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#source-code">Source Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#upsampling-and-downsampling">Upsampling and Downsampling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multi-instance-and-reentrance">Multi-instance and reentrance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#codec-specific-build-options">Codec-Specific Build Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#codec-specific-run-time-options">Codec-Specific Run-time Options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="LDAC_encoder_README.html">LDAC Encoder</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../Home_page.html">embARC Audio Codecs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../Home_page.html">Docs</a> &raquo;</li>
+        
+          <li><a href="Audio_codecs.html">Audio Codecs</a> &raquo;</li>
+        
+      <li>BT-CVSD Codec</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Audio_codecs/BT-CVSD_README.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bt-cvsd-codec">
+<h1>BT-CVSD Codec<a class="headerlink" href="#bt-cvsd-codec" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Bluetooth Continuous Variable Slope Delta Modulation
+(<a class="reference external" href="https://www.bluetooth.com/specifications/bluetooth-core-specification">BT-CVSD</a>)
+is a voice coding method. It uses delta modulation with a variable step
+size a special case of adaptive delta modulation. The input to the CVSD encoder
+is 64000 samples per second linear PCM (16 bits per sample). This design is according to the Bluetooth Core Specification v 5.1.</p>
+</div>
+<div class="section" id="source-code">
+<h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<p>BT-CVSD codec is developed according to <a class="reference external" href="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=457080">Bluetooth Core Specification v
+5.1</a>, 21 January 2019.</p>
+</div>
+<div class="section" id="upsampling-and-downsampling">
+<h2>Upsampling and Downsampling<a class="headerlink" href="#upsampling-and-downsampling" title="Permalink to this headline">¶</a></h2>
+<p>8x-upsampler and 8x-downsampler are parts of test application and provided as examples only.
+FIR filter parameters coefficients are designed per Bluetooth Core 5.1 spectral mask requirements
+and provided as example also. Test application processes 8 kHz sampled signal at input and provides
+8 kHz samples signal as output.</p>
+</div>
+<div class="section" id="multi-instance-and-reentrance">
+<h2>Multi-instance and reentrance<a class="headerlink" href="#multi-instance-and-reentrance" title="Permalink to this headline">¶</a></h2>
+<p>BT-CVSD codec implementation is reentrant and supports multi-instance. The codec doesn’t use
+any DSP registers directly. It is independent of DSP modes like saturation, guard
+bits and accumulator shift. If CVSD codec process frame is interrupted e.g. by interrupt
+it is the responsibility of ISR to restore DSP specific registers.</p>
+</div>
+<div class="section" id="codec-specific-build-options">
+<h2>Codec-Specific Build Options<a class="headerlink" href="#codec-specific-build-options" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="xref py py-exc docutils literal notranslate"><span class="pre">LTO_BUILD</span></code> and <code class="xref py py-exc docutils literal notranslate"><span class="pre">REMAPITU_T</span></code> options are not available for this codec.</p>
+</div>
+<div class="section" id="codec-specific-run-time-options">
+<h2>Codec-Specific Run-time Options<a class="headerlink" href="#codec-specific-run-time-options" title="Permalink to this headline">¶</a></h2>
+<p>Use the following command to run the BT-CVSD codec in MetaWare Debugger
+(See [2] in <a class="reference internal" href="../Getting_started/Getting_started.html#refs"><span class="std std-ref">References</span></a>):</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mdb</span> <span class="o">-</span><span class="n">cl</span> <span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">nsim</span> <span class="o">-</span><span class="n">tcf</span><span class="o">=&lt;</span><span class="n">default</span> <span class="n">TCF</span> <span class="kn">from</span> <span class="o">/</span><span class="n">rules</span><span class="o">/</span><span class="n">common_hw_config</span><span class="o">.</span><span class="n">mk</span><span class="o">&gt;</span> <span class="n">ARC_CVSD_CODEC_app</span><span class="o">.</span><span class="n">elf</span> <span class="p">[</span><span class="o">-</span><span class="n">u</span><span class="o">|</span> <span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">F</span> <span class="o">&lt;</span><span class="n">frame_len</span><span class="o">&gt;</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">enc</span><span class="o">|-</span><span class="n">dec</span><span class="o">|-</span><span class="n">encdec</span><span class="p">]</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="n">input_file</span><span class="o">.</span><span class="n">inp</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">o</span> <span class="o">&lt;</span><span class="n">output_file</span><span class="o">.</span><span class="n">cod</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>The following table lists the parameters that can be passed to this codec:</p>
+<table border="1" class="colwidths-given docutils align-center" id="id1">
+<caption><span class="caption-text">Command-Line Option Descriptions for CVSD Codec</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Option</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;input_file.inp&gt;</span></code></td>
+<td>Specifies the input *.inp file</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;output_file.cod&gt;</span></code></td>
+<td>Specifies the output *.cod file</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-u/-h</span></code></td>
+<td>Print help message</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-F</span></code></td>
+<td>Number of samples, must be a
+multiple of 4 for encoder and
+decoder, default: 256</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-enc</span></code></td>
+<td>Run encoder only</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-dec</span></code></td>
+<td>Run decoder only</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-encdec</span></code></td>
+<td>Run encoder and decoder</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The encoder output and the decoder input for this codec may have a format different from Bluetooth format.</p>
+</div>
+<p>The following command encodes the
+<strong>test_vector_8000.raw</strong> stream with a frame length of 2056 samples:</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mdb</span> <span class="o">-</span><span class="n">cl</span> <span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">nsim</span> <span class="o">-</span><span class="n">tcf</span><span class="o">=</span><span class="n">em9d_voice_audio</span> <span class="n">ARC_CVSD_CODEC_app</span><span class="o">.</span><span class="n">elf</span> <span class="o">-</span><span class="n">enc</span> <span class="o">-</span><span class="n">F</span> <span class="mi">2056</span> <span class="o">-</span><span class="n">i</span> <span class="s2">&quot;../testvectors/inp/test_vector_8000.raw&quot;</span>  <span class="o">-</span><span class="n">o</span> <span class="s2">&quot;../testvectors/test_vector_64000.cod&quot;</span>
+</pre></div>
+</div>
+<p>The following command decodes the
+<strong>test_vector_64000.cod</strong> stream with a frame length 4096 samples:</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mdb</span> <span class="o">-</span><span class="n">cl</span> <span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">nsim</span> <span class="o">-</span><span class="n">tcf</span><span class="o">=</span><span class="n">em9d_voice_audio</span> <span class="n">ARC_CVSD_CODEC_app</span><span class="o">.</span><span class="n">elf</span> <span class="o">-</span><span class="n">dec</span> <span class="o">-</span><span class="n">F</span> <span class="mi">4096</span> <span class="o">-</span><span class="n">i</span> <span class="s2">&quot;../testvectors/ref/test_vector_64000.cod&quot;</span>  <span class="o">-</span><span class="n">o</span> <span class="s2">&quot;../testvectors/test_vector_8000.out&quot;</span>
+</pre></div>
+</div>
+<p>The following command encodes and decodes the
+<strong>test_vector_8000.raw</strong> to <strong>test_vector_8000.out</strong> stream
+with a frame length of 4096 samples:</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mdb</span> <span class="o">-</span><span class="n">cl</span> <span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">nsim</span> <span class="o">-</span><span class="n">tcf</span><span class="o">=</span><span class="n">em9d_voice_audio</span> <span class="n">ARC_CVSD_CODEC_app</span><span class="o">.</span><span class="n">elf</span> <span class="o">-</span><span class="n">encdec</span> <span class="o">-</span><span class="n">F</span> <span class="mi">4096</span> <span class="o">-</span><span class="n">i</span> <span class="s2">&quot;../testvectors/ref/test_vector_8000.raw&quot;</span>  <span class="o">-</span><span class="n">o</span> <span class="s2">&quot;../testvectors/test_vector_8000.out&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="LDAC_encoder_README.html" class="btn btn-neutral float-right" title="LDAC Encoder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="G_726_README.html" class="btn btn-neutral float-left" title="G.726" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Synopsys, Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

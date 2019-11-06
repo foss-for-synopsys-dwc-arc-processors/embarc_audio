@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>LDAC Encoder &mdash; embARC Audio Codecs 1.00 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="BT-CVSD Codec" href="BT-CVSD_README.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../Home_page.html" class="icon icon-home"> embARC Audio Codecs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Overview/Overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Getting_started/Getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Audio_codecs.html">Audio Codecs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Audio_codecs.html#codecs-supported-by-embarc-audio">Codecs Supported by embARC Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Audio_codecs.html#optimizations">Optimizations</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Audio_codecs.html#supported-codecs">Supported Codecs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="GSM-FR_README.html">GSM-FR Codec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="G_711_README.html">G.711</a></li>
+<li class="toctree-l3"><a class="reference internal" href="G_722_README.html">G.722 Appendix IV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="G_726_README.html">G.726</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BT-CVSD_README.html">BT-CVSD Codec</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">LDAC Encoder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#source-code">Source Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multi-instance-and-reentrance">Multi-instance and reentrance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#codec-specific-build-options">Codec-Specific Build Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#codec-specific-run-time-options">Codec-Specific Run-Time Options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../Home_page.html">embARC Audio Codecs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../Home_page.html">Docs</a> &raquo;</li>
+        
+          <li><a href="Audio_codecs.html">Audio Codecs</a> &raquo;</li>
+        
+      <li>LDAC Encoder</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Audio_codecs/LDAC_encoder_README.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ldac-encoder">
+<h1>LDAC Encoder<a class="headerlink" href="#ldac-encoder" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Lossless Digital Audio Coding technology
+(<a class="reference external" href="https://www.sony.net/Products/LDAC/?j-short=LDAC">LDAC</a>) is a
+proprietary audio codec made by Sony used to stream high-quality music
+to a Bluetooth device. This is a lossy codec that compresses audio with
+different efficiency. LDAC supports three fixed rates: 330, 660, 990
+kb/s and an adaptive bitrate. Source code of LDAC encoder is available in
+Android Open Source Project.</p>
+</div>
+<div class="section" id="source-code">
+<h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<p>The original LDAC source code of the encoder was taken from
+<a class="reference external" href="https://android.googlesource.com/platform/external/libldac/+/refs/heads/master">AOSP</a>.
+Version of the code taken: commit
+300aa818a1a6ee79c9a2fab67be0fdbccefc865b, 20 February 2019.</p>
+</div>
+<div class="section" id="multi-instance-and-reentrance">
+<h2>Multi-instance and reentrance<a class="headerlink" href="#multi-instance-and-reentrance" title="Permalink to this headline">¶</a></h2>
+<p>Codec hasn’t tested on multi-instance run, for more information about support of
+multi-instance run see codec source documentation. Codec supports reentrance
+in case if the value of <code class="xref py py-exc docutils literal notranslate"><span class="pre">DSP_CTRL</span></code> register and accumulators registers (<code class="xref py py-exc docutils literal notranslate"><span class="pre">ACC0_LO</span></code>,
+<code class="xref py py-exc docutils literal notranslate"><span class="pre">ACC0_HI</span></code>, <code class="xref py py-exc docutils literal notranslate"><span class="pre">ACC0_GLO</span></code> and <code class="xref py py-exc docutils literal notranslate"><span class="pre">ACC0_GHI</span></code> in case of guard mode is on), see [1] in <a class="reference internal" href="../Getting_started/Getting_started.html#refs"><span class="std std-ref">References</span></a>, will be saved and restored.</p>
+</div>
+<div class="section" id="codec-specific-build-options">
+<h2>Codec-Specific Build Options<a class="headerlink" href="#codec-specific-build-options" title="Permalink to this headline">¶</a></h2>
+<p><code class="xref py py-exc docutils literal notranslate"><span class="pre">LTO_BUILD</span></code> option is disabled for this codec by default. To build the LDAC
+encoder, you must use this specific option: <code class="xref py py-exc docutils literal notranslate"><span class="pre">FX_MAPPING=ON/OFF</span></code></p>
+<p>This option turns ON/OFF remapping of original mathematical fixed point functions
+to the optimized ones for ARCv2 DSP processor family. This option is enabled
+by default.</p>
+<p><strong>Example</strong></p>
+<p>To build application and library with original (not optimized) mathematical
+fixed point functions, use the following command:</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmake</span> <span class="nb">all</span> <span class="n">FX_MAPPING</span><span class="o">=</span><span class="n">off</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="codec-specific-run-time-options">
+<h2>Codec-Specific Run-Time Options<a class="headerlink" href="#codec-specific-run-time-options" title="Permalink to this headline">¶</a></h2>
+<p>To run LDAC encoder in MetaWare Debugger (See [2] in <a class="reference internal" href="../Getting_started/Getting_started.html#refs"><span class="std std-ref">References</span></a>),
+use the following command:</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mdb</span> <span class="o">&lt;</span><span class="n">mdb</span> <span class="n">parameters</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">tcf</span><span class="o">=&lt;</span><span class="n">default</span> <span class="n">TCF</span> <span class="kn">from</span> <span class="o">/</span><span class="n">rules</span><span class="o">/</span><span class="n">common_hw_config</span><span class="o">.</span><span class="n">mk</span><span class="o">&gt;</span> <span class="n">LDAC_ENCODER_app</span><span class="o">.</span><span class="n">elf</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="n">input_file</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">o</span> <span class="o">&lt;</span><span class="n">output_file</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">F</span> <span class="o">&lt;</span><span class="n">output_frame_size</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>The following table lists parameters that can be passed to the
+LDAC encoder application:</p>
+<table border="1" class="colwidths-given docutils align-center" id="id1">
+<caption><span class="caption-text">Command-Line Options Descriptions for LDAC Encoder</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="31%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Option</strong></th>
+<th class="head"><strong>Description</strong></th>
+<th class="head"><strong>Available values</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-i</span></code></td>
+<td>Specifies the input
+WAV file</td>
+<td>Any name of .wav file
+without spaces</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-o</span></code></td>
+<td>Specifies the output
+file</td>
+<td>Any name of output
+file without spaces</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-exc docutils literal notranslate"><span class="pre">-F</span></code></td>
+<td>Set output frame size
+per one channel (in
+bytes)</td>
+<td>165, 110, 82, 66, 55,
+47, 41, 36, 33, 30,
+27, 25, 23</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<p>The following command runs the encoder in ARC nSIM simulator and encodes the
+wav file with a 110-byte output frame size:</p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mdb</span> <span class="o">-</span><span class="n">nsim</span> <span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">cl</span> <span class="o">-</span><span class="n">tcf</span><span class="o">=</span><span class="n">em9d_voice_audio</span> <span class="n">LDAC_ENCODER_app</span><span class="o">.</span><span class="n">elf</span> <span class="o">-</span><span class="n">i</span> <span class="n">example_96k_2byte_2ch</span><span class="o">.</span><span class="n">wav</span> <span class="o">-</span><span class="n">o</span> <span class="n">example_96k_2byte_2ch_FS110</span><span class="o">.</span><span class="n">bin</span> <span class="o">-</span><span class="n">F</span> <span class="mi">110</span>
+</pre></div>
+</div>
+<p>Output file <strong>example_96k_2byte_2ch_FS110.bin</strong> must be bit-exact with
+the similarly named reference file in the <code class="xref py py-exc docutils literal notranslate"><span class="pre">ldac_encoder/testvectors/ref</span></code>
+folder.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="BT-CVSD_README.html" class="btn btn-neutral float-left" title="BT-CVSD Codec" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Synopsys, Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
