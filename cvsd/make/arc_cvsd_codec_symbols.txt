@@ -1,0 +1,5 @@
+cvsdInit
+cvsdEncode
+cvsdDecode
+interpolation_x8
+decimation_x8

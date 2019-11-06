@@ -1,0 +1,6 @@
+alaw_compress
+alaw_expand
+ulaw_compress
+ulaw_expand
+G726_encode
+G726_decode

@@ -1,0 +1,12 @@
+ldaclib_encode
+ldaclib_flush_encode
+ldaclib_get_config_info
+ldaclib_set_frame_header
+ldaclib_get_handle
+ldaclib_set_config_info
+ldaclib_get_encode_setting
+ldaclib_set_encode_info
+ldaclib_init_encode
+ldaclib_clear_error_code
+ldaclib_clear_internal_error_code
+ldaclib_free_encode

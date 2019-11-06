@@ -1,0 +1,7 @@
+gsm_create
+gsm_encode
+gsm_option
+gsm_explode
+gsm_implode
+gsm_decode
+gsm_destroy

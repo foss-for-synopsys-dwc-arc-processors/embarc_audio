@@ -1,0 +1,11 @@
+g722_reset_encoder
+g722_encode
+setFrameRate
+getCounterId
+setCounter
+Init_WMOPS_counter
+fwc
+Reset_WMOPS_counter
+WMOPS_output_avg
+lsbcod
+hsbcod
