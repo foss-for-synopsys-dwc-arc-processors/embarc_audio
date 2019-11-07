@@ -1,7 +1,7 @@
 embARC Audio
 =====
 ![](https://embarc.org/images/icons/icon_baremetal.jpg)  
-###### This repository contains sorce code of voice and audio codecs, test library and documantation.
+###### This repository contains source code of voice and audio codecs, test library and documentation.
 ## Release notes
 The following codecs were tuned for using MWDT compiler on processors families ARC EM/HS4xD voice audio:
 - BT-CVSD
@@ -25,7 +25,7 @@ The following codecs were tuned for using MWDT compiler on processors families A
 ## Prerequisites
 1. Installed MetaWare Development Toolkit P-2019.09 or newer 
 2. Valid license for MetaWare Development compiler and debugger
-3. HW platform shall support accumulator preshift option (-Xdsp_itu) for codecs based on ITU-T basop, with REMAPITU_T=on.
+3. HW platform shall support accumulator preshift option (-Xdsp_itu) for codecs based on ITU-T BASOP, with REMAPITU_T=on.
 
 ## Supported platforms
 For codecs where conformance (bit exactness tests) test suite is required to pass following ARCv2 DSP platforms are tested:
@@ -36,7 +36,7 @@ For codecs where conformance (bit exactness tests) test suite is required to pas
 * hs45d voice audio;  
 
 ## Getting started
-All codecs fllow general approach to build and run an codec application. For more information see in the README.md of a specific codec.
+All codecs follow a general approach to build and run a codec application. For more information see in the README.md of a specific codec.
 #####  Build and run procedure for default platform:
 1. Open command line in folder of specific codec
 2. `gmake cleanall`

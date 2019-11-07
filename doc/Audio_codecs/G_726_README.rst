@@ -13,7 +13,7 @@ Source Code
 
 The original G.726 source code and test sequences are taken from
 `G.191 <https://www.itu.int/rec/T-REC-G.191-201901-I/en>`__ version
-2.0, 24 January 2000, and this codec passses the test cases successfully. 
+2.0, 24 January 2000, and this codec passes the test cases successfully. 
 
 Multi-instance and reentrance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -113,7 +113,7 @@ The following tables list the parameters that can be passed to G.726.
    +-----------------------------------+-----------------------------------+
 ..
 
-.. table:: Command Line Options Descriptions for G.726 with Constant Bitrate Support
+.. table:: Command-Line Options Descriptions for G.726 with Constant Bitrate Support
    :align: center
    :widths: 20, 130
    

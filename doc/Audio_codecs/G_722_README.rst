@@ -10,10 +10,10 @@ kHz Wideband audio codec operating at 48, 56 and 64 kbit/s.
 Source code
 ~~~~~~~~~~~ 
 
-G.722 codec, with appendix IV for decoder, and test sequences for use
+G.722 codec, with appendix IV for the decoder, and test sequences for use
 with G.722 codec + G.722 decoder appendix IV were taken from `ITU-T
 G.722 <https://www.itu.int/rec/T-REC-G.722-201209-I/en>`__ Software
-Release 3.00, October 2012, and this codec passses the test cases successfully.
+Release 3.00, October 2012, and this codec passes the test cases successfully.
 
 Multi-instance and reentrance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -190,9 +190,9 @@ The following tables list the parameters that can be passed to the G.722 codec:
 
 .. note::
    The decoder supports only g192 byte format. For this reason, if you will encode a file in the legacy byte-oriented
-   format by means of [-byte] option, you can not decode this file by the decoder.
+   format using [-byte] option, you can not decode this file by the decoder.
 
-The following command encodes the **inpsp.bin** stream to legacy byte oriented format:
+The following command encodes the **inpsp.bin** stream to legacy byte-oriented format:
 
 .. code:: shell
 
