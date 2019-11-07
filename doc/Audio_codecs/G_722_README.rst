@@ -13,7 +13,8 @@ Source code
 G.722 codec, with appendix IV for the decoder, and test sequences for use
 with G.722 codec + G.722 decoder appendix IV were taken from `ITU-T
 G.722 <https://www.itu.int/rec/T-REC-G.722-201209-I/en>`__ Software
-Release 3.00, October 2012, and this codec passes the test cases successfully.
+Release 3.00, October 2012 and from `G.191 <https://www.itu.int/rec/T-REC-G.191-201901-I/en>`__ 
+Software Tools Library, 13 January 2019, also, this codec passes the test cases successfully.
 
 Multi-instance and reentrance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
