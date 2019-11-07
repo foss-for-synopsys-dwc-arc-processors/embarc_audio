@@ -1,12 +1,12 @@
 Audio Codecs
 ------------
 
-An audio codec is a Hardware device or computer program capable of encoding
+An audio codec is a hardware device or computer program capable of encoding
 or decoding a digital audio signal including music and human speech. 
 In software terms, an audio codec is a computer program implementing 
 an algorithm that compresses and decompresses digital audio data. 
 
-Telecommunications codecs written using ITU-T/ETSI baseops for elementary 
+Telecommunications codecs had written using ITU-T/ETSI BASOPs for elementary 
 operations require bit-exact operations.
 
 The objective of the algorithm is to represent the audio
@@ -24,7 +24,7 @@ and can evolve differently.
 Some usual cases are: 
 
  - Porting of integer C code using standard C integer types 
- - Porting of C code using floating point (either using a floating-point 
+ - Porting of C code using floating-point (either using a floating-point 
    unit or emulation) 
  - Porting fixed-point algorithms written with C integer types and 
    operations 
@@ -38,7 +38,7 @@ Codecs Supported by embARC Audio
 ETSI/3GPP Codecs 
 ^^^^^^^^^^^^^^^^
 
-Codecs of this group are designed to transmit speech over cellular network. 
+Codecs of this group are designed to transmit speech over a cellular network. 
 GSM Full Rate (GSM-FR) was the first digital speech coding standard used in
 early deployments of GSM digital mobile phone systems. The GSM-FR
 bitrate is 13 kbps and has very moderate MIPS/memory requirements.
@@ -54,7 +54,7 @@ over IP, and mobile networks.
 Bluetooth CVSD 
 ^^^^^^^^^^^^^^
 
-Continuously variable Slope Delta Modulation (BT-CVSD) is a mandatory 
+Continuously Variable Slope Delta Modulation (BT-CVSD) is a mandatory 
 codec for Bluetooth to transmit speech at 8 kHz sampling rate at 64 kbps. 
 
 Sony LDAC 

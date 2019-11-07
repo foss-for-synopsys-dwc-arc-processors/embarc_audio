@@ -14,14 +14,14 @@ Source code
 The source code is based on the original GSM-FR code (`3GPP TS
 06.10 <http://www.quut.com/gsm/>`__) created by Jutta Degener and
 Carsten Bormann, Technische Universitaet Berlin, and then updated to 18
-pathlevel. The Application of this codec is to get RPE-LTP from
+path level. The Application of this codec is to get RPE-LTP from
 `G722 <https://github.com/foss-for-synopsys-dwc-arc-processors/G722/tree/master/rpeltp>`__, commit eddb5a231b51,
 and
-`G711 <https://github.com/foss-for-synopsys-dwc-arc-processors/G722/tree/master/g711>`__, same commit,
+`G711 <https://github.com/foss-for-synopsys-dwc-arc-processors/G722/tree/master/g711>`__, the same commit,
 for α-law and µ-law compression. Test sequences are taken
 from `3GPP TS
 06.10 <http://www.3gpp.org/ftp/Specs/archive/06_series/06.10/0610-820.zip>`__
-version 8.2.0 Release 99, June 2001, and this codec passses the test cases successfully.
+version 8.2.0 Release 99, June 2001, and this codec passes the test cases successfully.
 
 Multi-instance and reentrance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
