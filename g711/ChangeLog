@@ -1,0 +1,12 @@
+ Wed  6 November  2018
+
+	* Release 1.0: released
+	Create branches of code with equal functionality but with better using of ARC EM processors features.
+	Add profiling functions in test application.
+	Remove origin makefiles.
+	Remove origin readme.
+	Remove *.c.org files
+	Create new makefiles with support of MWDT compiler.
+	Change structure of project.
+	Move testvectors to testvectors folder.
+	Remove several testvectors.
