@@ -54,3 +54,8 @@ At the end of successful execution of codec application the output log is expect
 `FC: no differences encountered`
 ## Known Issues
 None
+
+## Contact information
+* Aleksandr Kiiaev <Alexander.Kiyaev@synopsys.com>
+* Kirill Arestov <Kirill.Arestov@synopsys.com>
+* Ilya Pozdnov <Ilya.Pozdnov@synopsys.com>
