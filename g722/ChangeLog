@@ -1,0 +1,17 @@
+ Wed  6 November  2018
+
+	* Release 1.0: released
+	Create branches of code with equal functionality but with better using of 
+	ARC EM/HS processors family features.
+	Replace main functions of STL library by MWDT specific version.
+	Add profiling functions in test application.
+	Remove origin makefiles.
+	Remove origin readme.
+	Remove *.c.org files
+	Create new makefiles with support of MWDT compiler.
+	Change structure of project.
+	Remove test executor.
+	Move testvectors to testvectors folder.
+	Remove several testvectors.
+	Add G.722 plc decoder appendix IV source files and copyright (00COPYRIGHT_NOTICE_G.722App.IV_vers20120913.txt).
+	
