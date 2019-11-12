@@ -1,3 +1,11 @@
+/*
+* Copyright 2019-present, Synopsys, Inc.
+* All rights reserved.
+*
+* Synopsys modifications to this source code is licensed under
+* the ITU-T SOFTWARE TOOLS' GENERAL PUBLIC LICENSE found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
 /*                                                           03.Feb.2010 v1.4
   ============================================================================
 
