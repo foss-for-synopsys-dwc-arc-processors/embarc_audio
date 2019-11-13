@@ -1,3 +1,11 @@
+/*
+* Copyright 2019-present, Synopsys, Inc.
+* All rights reserved.
+*
+* Synopsys modifications to this source code is licensed under
+* TU-Berlin-1.0 found in the COPYRIGHT file in the root directory
+* of this source tree.
+*/
 /*                                                          v1.0 - 12/Apr/1994
   =============================================================================
 
