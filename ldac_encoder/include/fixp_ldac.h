@@ -1,4 +1,12 @@
 /*
+* Copyright 2019-present, Synopsys, Inc.
+* All rights reserved.
+*
+* Synopsys modifications to this source code is licensed under
+* the Apache-2.0 license found in the LICENSE file in the
+* root directory of this source tree.
+*/
+/*
  * Copyright (C) 2003 - 2016 Sony Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
