@@ -1,12 +1,4 @@
 /*
-* Copyright 2019-present, Synopsys, Inc.
-* All rights reserved.
-*
-* Synopsys modifications to this source code is licensed under
-* the ITU-T SOFTWARE TOOLS' GENERAL PUBLIC LICENSE found in the
-* LICENSE.md file in the root directory of this source tree.
-*/
-/*
   ============================================================================
    File: G726.H                                        28-Feb-1991 (18:00:00)
   ============================================================================
@@ -62,16 +54,16 @@ typedef struct
 }               G726_state;
 
 #ifdef VAXC
-#  define SHORT_g726 short
+#  define SHORT short
 #else
-#  define SHORT_g726 int
+#  define SHORT int
 #endif
 
 /* Function prototypes */
 void G726_encode ARGS((short *inp_buf, short *out_buf, long smpno, char *law, 
-	SHORT_g726 rate, SHORT_g726 r, G726_state *state));
+	SHORT rate, SHORT r, G726_state *state));
 void G726_decode ARGS((short *inp_buf, short *out_buf, long smpno, char *law, 
-	SHORT_g726 rate, SHORT_g726 r, G726_state *state));
+	SHORT rate, SHORT r, G726_state *state));
 
 /* Definitions for better user interface (?!) */
 #ifndef IS_LOG 
