@@ -3,7 +3,7 @@
 * All rights reserved.
 *
 * Synopsys modifications to this source code is licensed under
-* TU-Berlin-1.0 found in the COPYRIGHT file in the root directory
+* the terms found in the COPYRIGHT file in the root directory
 * of this source tree.
 */
 /*                                                         v1.2 - 02/Feb/2010
