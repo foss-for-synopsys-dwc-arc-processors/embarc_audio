@@ -4,8 +4,8 @@
 	Create branches of code with equal functionality but with better using of 
 	ARC EM/HS processors family features.
 	Add profiling functions in test application.
-	Remove origin makefiles.
-	Remove origin readme.
+	Remove original makefiles.
+	Remove original readme.
 	Remove *.c.org files
 	Create new makefiles with support of MWDT compiler.
 	Change structure of project.

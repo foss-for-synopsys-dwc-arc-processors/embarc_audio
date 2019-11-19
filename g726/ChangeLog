@@ -5,8 +5,8 @@
 	ARC EM/HS processors family features.
 	Replace main functions of STL library by MWDT specific version.
 	Add profiling functions in test application.
-	Remove origin makefiles.
-	Remove origin readme.
+	Remove original makefiles.
+	Remove original readme.
 	Remove *.c.org files
 	Create new makefiles with support of MWDT compiler.
 	Change structure of project.
