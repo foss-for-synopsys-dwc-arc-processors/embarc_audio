@@ -1,0 +1,19 @@
+ Wed  6 November  2018
+
+	* Release 1.0: released
+	Take original LDAC source code of the encoder was taken from
+    https://android.googlesource.com/platform/external/libldac/+/refs/heads/master .
+	Version of the code taken: commit300aa818a1a6ee79c9a2fab67be0fdbccefc865b, 20 February 2019
+	Create test application.
+	Create branches of code with equal functionality but with better using of 
+	ARC EM/HS processors family features.
+	Replace main math functions by MWDT specific (FXAPI) version.
+	Add performance and memory profiling.
+	Remove Android.bp, OWNERS, adaptive bit rate feature with
+	ldacBT_abr.c and ldacBT_abr.h files.
+	Fix buffer overflow issue in pack_store_ldac function which rewrites two extra bytes 
+	beyond the allocated memory.
+	Create makefiles with support of MWDT compiler.
+	Change structure of project.
+	Create testvectors for different parameters of codec.
+	

@@ -1,4 +1,12 @@
 /*
+* Copyright 2019-present, Synopsys, Inc.
+* All rights reserved.
+*
+* Synopsys modifications to this source code is licensed under
+* the terms found in the COPYRIGHT file in the root directory
+* of this source tree.
+*/
+/*
   ============================================================================
    File: G711.H                                        
   ============================================================================
