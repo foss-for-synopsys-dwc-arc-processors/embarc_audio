@@ -175,7 +175,7 @@ Application_Settings_t app_settings = {0};
 */
 int parse_rate(str, rate)
 char *str;
-SHORT_g726 **rate;
+SHORT **rate;
 {
   char *s=str;
   int count=1, i;
@@ -190,7 +190,7 @@ SHORT_g726 **rate;
   }
 
   /* Allocates memory for the necessary number of rates */
-  *rate = (SHORT_g726 *) calloc(count, sizeof(SHORT_g726));
+  *rate = (SHORT *) calloc(count, sizeof(SHORT));
 
   if (*rate==NULL) 
     return(-1);
@@ -315,9 +315,9 @@ int main(argc, argv)
   G726_state      encoder_state, decoder_state;
   long            N = 16, N1 = 1, N2 = 0, cur_blk, smpno;
   short           *tmp_buf, *inp_buf, *out_buf;
-  SHORT_g726      reset=1;
+  SHORT      reset=1;
   short           inp_type, out_type;
-  SHORT_g726      *rate=0;
+  SHORT      *rate=0;
   char            encode = 1, decode = 1, law[4] = "A", def_rate[]="32";
   int             rateno=1, rate_idx;
 
