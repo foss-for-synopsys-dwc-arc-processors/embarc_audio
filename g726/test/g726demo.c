@@ -1,3 +1,11 @@
+/*
+* Copyright 2019-present, Synopsys, Inc.
+* All rights reserved.
+*
+* Synopsys modifications to this source code is licensed under
+* the ITU-T SOFTWARE TOOLS' GENERAL PUBLIC LICENSE found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
 /*                                                           03.Feb.2010 v1.4
   ============================================================================
 
@@ -213,9 +221,9 @@ int main(argc, argv)
   G726_state      encoder_state, decoder_state;
   long            N = 256, N1 = 1, N2 = 0, cur_blk, smpno;
   short           *tmp_buf, *inp_buf, *out_buf;
-  SHORT_g726      reset=1;
+  SHORT      reset=1;
   short           inp_type, out_type;
-	SHORT_g726      rate;
+	SHORT      rate;
 
   /* Progress indication */
   static char     quiet=0, funny[9] = "|/-\\|/-\\";

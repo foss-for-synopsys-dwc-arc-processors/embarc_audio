@@ -1,3 +1,11 @@
+/*
+* Copyright 2019-present, Synopsys, Inc.
+* All rights reserved.
+*
+* Synopsys modifications to this source code is licensed under
+* the ITU-T SOFTWARE TOOLS' GENERAL PUBLIC LICENSE found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
 /*                                                           v2.0 24.Jan.2000
 =============================================================================
 
@@ -178,24 +186,24 @@ Private:
 static void G726_expand ARGS((short *s, char *law, short *sl));
 static void G726_subta ARGS((short *sl, short *se, short *d));
 static void G726_log ARGS((short *d, short *dl, short *ds));
-static void G726_quan ARGS((SHORT_g726 rate, short *dln, short *ds, short *i));
+static void G726_quan ARGS((SHORT rate, short *dln, short *ds, short *i));
 static void G726_subtb ARGS((short *dl, short *y, short *dln));
 static void G726_adda ARGS((short *dqln, short *y, short *dql));
 static void G726_antilog ARGS((short *dql, short *dqs, short *dq));
-static void G726_reconst ARGS((SHORT_g726 rate, short *i, short *dqln, short *dqs));
+static void G726_reconst ARGS((SHORT rate, short *i, short *dqln, short *dqs));
 static void G726_delaya ARGS((short *r, short *x, short *y));
 static void G726_delayb ARGS((short *r, short *x, short *y));
 static void G726_delayc ARGS((short *r, long *x, long *y));
 static void G726_delayd ARGS((short *r, short *x, short *y));
 static void G726_filtd ARGS((short *wi, short *y, short *yut));
 static void G726_filte ARGS((short *yup, long *yl, long *ylp));
-static void G726_functw ARGS((SHORT_g726 rate, short *i, short *wi));
+static void G726_functw ARGS((SHORT rate, short *i, short *wi));
 static void G726_limb ARGS((short *yut, short *yup));
 static void G726_mix ARGS((short *al, short *yu, long *yl, short *y));
 static void G726_filta ARGS((short *fi, short *dms, short *dmsp));
 static void G726_filtb ARGS((short *fi, short *dml, short *dmlp));
 static void G726_filtc ARGS((short *ax, short *ap, short *app));
-static void G726_functf ARGS((SHORT_g726 rate, short *i, short *fi));
+static void G726_functf ARGS((SHORT rate, short *i, short *fi));
 static void G726_lima ARGS((short *ap, short *al));
 static void G726_subtc ARGS((short *dmsp, short *dmlp, short *tdp, short *y, short *ax));
 static void G726_triga ARGS((short *tr, short *app, short *apr));
@@ -210,12 +218,12 @@ static void G726_limd ARGS((short *a1t, short *a2p, short *a1p));
 static void G726_trigb ARGS((short *tr, short *ap, short *ar));
 static void G726_upa1 ARGS((short *pk0, short *pk1, short *a1, short *sigpk, short *a1t));
 static void G726_upa2 ARGS((short *pk0, short *pk1, short *pk2, short *a2, short *a1, short *sigpk, short *a2t));
-static void G726_upb ARGS((SHORT_g726 rate, short *u, short *b, short *dq, short *bp));
+static void G726_upb ARGS((SHORT rate, short *u, short *b, short *dq, short *bp));
 static void G726_xor ARGS((short *dqn, short *dq, short *u));
 static void G726_tone ARGS((short *a2p, short *tdp));
 static void G726_trans ARGS((short *td, long *yl, short *dq, short *tr));
 static void G726_compress ARGS((short *sr, char *law, short *sp));
-static void G726_sync ARGS((SHORT_g726 rate, short *i, short *sp, short *dlnx, short *dsx, char *law, short *sd));
+static void G726_sync ARGS((SHORT rate, short *i, short *sp, short *dlnx, short *dsx, char *law, short *sd));
 
 /*
  *  .................. FUNCTIONS ..................

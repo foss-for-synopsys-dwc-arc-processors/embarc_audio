@@ -19,9 +19,9 @@ BT-CVSD codec is developed according to `Bluetooth Core Specification v
 Upsampling and Downsampling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-8x-upsampler and 8x-downsampler are parts of test application and provided as examples only.
+8x-upsampler and 8x-downsampler are parts of the test application and provided as examples only.
 FIR filter parameters coefficients are designed per Bluetooth Core 5.1 spectral mask requirements
-and provided as example also. Test application processes 8 kHz sampled signal at input and provides
+and provided as an example also. Test application processes 8 kHz sampled signal at the input and provides
 8 kHz samples signal as output.
 
 Multi-instance and reentrance

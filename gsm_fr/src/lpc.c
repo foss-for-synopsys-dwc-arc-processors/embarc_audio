@@ -1,4 +1,12 @@
 /*
+* Copyright 2019-present, Synopsys, Inc.
+* All rights reserved.
+*
+* Synopsys modifications to this source code is licensed under
+* the terms found in the COPYRIGHT file in the root directory
+* of this source tree.
+*/
+/*
  * Copyright 1992 by Jutta Degener and Carsten Bormann, Technische
  * Universitaet Berlin.  See the accompanying file "COPYRIGHT" for
  * details.  THERE IS ABSOLUTELY NO WARRANTY FOR THIS SOFTWARE.
