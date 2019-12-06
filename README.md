@@ -12,7 +12,7 @@ The following codecs were tuned for using MWDT compiler on processors families A
 - Sony LDAC encoder
 
 ## Package structure
-[doc](/doc) - contains the API documentation of the embARC MLI library  
+[doc](/doc) - contains the API documentation of the embARC Audio Codecs library  
 [BT-CVSD](/cvsd) - Bluetooth CVSD codec  
 [G.711](/g711) - G.711 codec  
 [G.722](/g722) - G.722 codec  
