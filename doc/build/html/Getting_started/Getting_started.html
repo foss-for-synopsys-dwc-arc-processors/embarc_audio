@@ -306,7 +306,7 @@ same directory structure):</p>
 </div>
 <div class="section" id="build-parameters">
 <h3>Build Parameters<a class="headerlink" href="#build-parameters" title="Permalink to this headline">¶</a></h3>
-<p>To build the library with your own parameters, use the following command:</p>
+<p>To build the library with your parameters, use the following command:</p>
 <div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmake</span> <span class="nb">all</span> <span class="o">&lt;</span><span class="n">common_parameters</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">specific_parameters</span><span class="o">&gt;</span>
 </pre></div>
 </div>
@@ -357,7 +357,7 @@ See [1] in <a class="reference internal" href="#refs"><span class="std std-ref">
 </tbody>
 </table>
 <dl class="docutils">
-<dt>Code was tested with following hardware templates:</dt>
+<dt>Code was tested with the following hardware templates:</dt>
 <dd><ul class="first last simple">
 <li>em5d voice audio</li>
 <li>em7d voice audio</li>
@@ -375,7 +375,7 @@ basop32 library under EM9D voice audio platform:</p>
 </div>
 <div class="section" id="run-parameters">
 <h3>Run Parameters<a class="headerlink" href="#run-parameters" title="Permalink to this headline">¶</a></h3>
-<p>To run the codec test application with your own parameters, use the following command:</p>
+<p>To run the codec test application with your parameters, use the following command:</p>
 <div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mdb</span> <span class="o">&lt;</span><span class="n">mdb</span> <span class="n">parameters</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">test_app_executable</span><span class="o">&gt;.</span><span class="n">elf</span> <span class="o">&lt;</span><span class="n">test_app_executable_params</span><span class="o">&gt;</span>
 </pre></div>
 </div>
@@ -394,9 +394,9 @@ component.</p>
 configuration, see [2] and [3] in <a class="reference internal" href="#refs"><span class="std std-ref">References</span></a>.</p>
 <p><strong>&lt;test_app_executable&gt;.elf</strong> is a binary image of an executable file to
 be loaded by the debugger.</p>
-<p><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;test_app_executable_params&gt;</span></code> is a command line for the test
-application. Details of the test application command lines depend on the
-particular test application, and do not depend on the MDB/hardware
+<p><code class="xref py py-exc docutils literal notranslate"><span class="pre">&lt;test_app_executable_params&gt;</span></code> is a command-line for the test
+application. Details of the test application command-lines depend on the
+particular test application and do not depend on the MDB/hardware
 configuration. Usually, these parameters provide test-application
 specific information, such as I/O file names and information of their
 format interpretation and codec-specific configuration information. For
@@ -408,7 +408,7 @@ for codec-specific structure fields of an individual component.</p>
 <div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mbd</span> <span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">cl</span> <span class="o">-</span><span class="n">nsim</span> <span class="o">&lt;</span><span class="n">test_app_executable</span><span class="o">&gt;.</span><span class="n">elf</span> <span class="o">&lt;</span><span class="n">test_app_executable_params</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>To invoke GUI interface of debugger, omit options -run and -cl:</p>
+<p>To invoke GUI interface of the debugger, omit options -run and -cl:</p>
 <div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mbd</span> <span class="o">-</span><span class="n">nsim</span> <span class="o">&lt;</span><span class="n">test_app_executable</span><span class="o">&gt;.</span><span class="n">elf</span> <span class="o">&lt;</span><span class="n">test_app_executable_params</span><span class="o">&gt;</span>
 </pre></div>
 </div>

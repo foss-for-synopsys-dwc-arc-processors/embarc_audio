@@ -52,7 +52,7 @@ audio codecs for
 
 For better optimization, contact Synopsys.
 
-Out-Of-the Box Optimizations
+Out-Of-the-Box Optimizations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Out-Of-the Box optimization (OOB optimization) technique usually
@@ -60,8 +60,8 @@ achieves reasonable performance with minimal or no source code
 modifications and thus minimal effort. This typically includes following
 steps:
 
--  Replacing ETSI/ITU-T standard basop headers by Metware Development 
-   Toolkit provided and excluding from compilation basop sources (C files)
+-  Replacing ETSI/ITU-T standard BASOP headers by Metware Development 
+   Toolkit provided and excluding from compilation BASOP sources (C files)
    
 -  Tuning the compiler options to find the best performance vs. code-size
    trade-offs. For global optimization, try :exc:`-Hmerge` or :exc:`-Hlto`:
@@ -116,7 +116,7 @@ Terms and definitions
       Link-Time Optimization 
 
    MAC
-      Multiple Accumulate 
+      Multiply-Accumulate 
 
    MDB 
       MetaWare Debugger

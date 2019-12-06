@@ -118,7 +118,7 @@ same directory structure):
 Build Parameters
 ^^^^^^^^^^^^^^^^
 
-To build the library with your own parameters, use the following command:
+To build the library with your parameters, use the following command:
 
 .. code:: shell
 
@@ -162,7 +162,7 @@ The following table enlists the common parameters for codecs:
    |                                   | See [1] in :ref:`Refs`.            |
    +-----------------------------------+------------------------------------+
 
-Code was tested with following hardware templates: 
+Code was tested with the following hardware templates: 
  - em5d voice audio
  - em7d voice audio
  - em9d voice audio
@@ -179,7 +179,7 @@ basop32 library under EM9D voice audio platform:
 Run Parameters
 ^^^^^^^^^^^^^^
 
-To run the codec test application with your own parameters, use the following command:
+To run the codec test application with your parameters, use the following command:
 
 .. code:: shell
 
@@ -203,9 +203,9 @@ configuration, see [2] and [3] in :ref:`Refs`.
 **<test_app_executable>.elf** is a binary image of an executable file to
 be loaded by the debugger.
 
-:exc:`<test_app_executable_params>` is a command line for the test
-application. Details of the test application command lines depend on the 
-particular test application, and do not depend on the MDB/hardware
+:exc:`<test_app_executable_params>` is a command-line for the test
+application. Details of the test application command-lines depend on the 
+particular test application and do not depend on the MDB/hardware
 configuration. Usually, these parameters provide test-application
 specific information, such as I/O file names and information of their
 format interpretation and codec-specific configuration information. For
@@ -220,7 +220,7 @@ for codec-specific structure fields of an individual component.
 
    mbd -run -cl -nsim <test_app_executable>.elf <test_app_executable_params>
 
-To invoke GUI interface of debugger, omit options -run and -cl:
+To invoke GUI interface of the debugger, omit options -run and -cl:
 
 .. code:: shell
 

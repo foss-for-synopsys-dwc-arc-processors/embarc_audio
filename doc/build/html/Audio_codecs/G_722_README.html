@@ -184,10 +184,11 @@ kHz Wideband audio codec operating at 48, 56 and 64 kbit/s.</p>
 </div>
 <div class="section" id="source-code">
 <h2>Source code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
-<p>G.722 codec, with appendix IV for decoder, and test sequences for use
+<p>G.722 codec, with appendix IV for the decoder, and test sequences for use
 with G.722 codec + G.722 decoder appendix IV were taken from <a class="reference external" href="https://www.itu.int/rec/T-REC-G.722-201209-I/en">ITU-T
 G.722</a> Software
-Release 3.00, October 2012, and this codec passses the test cases successfully.</p>
+Release 3.00, October 2012 and from <a class="reference external" href="https://www.itu.int/rec/T-REC-G.191-201901-I/en">G.191</a>
+Software Tools Library, 13 January 2019, also, this codec passes the test cases successfully.</p>
 </div>
 <div class="section" id="multi-instance-and-reentrance">
 <h2>Multi-instance and reentrance<a class="headerlink" href="#multi-instance-and-reentrance" title="Permalink to this headline">¶</a></h2>
@@ -401,9 +402,9 @@ Encoder</td>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The decoder supports only g192 byte format. For this reason, if you will encode a file in the legacy byte-oriented
-format by means of [-byte] option, you can not decode this file by the decoder.</p>
+format using [-byte] option, you can not decode this file by the decoder.</p>
 </div>
-<p>The following command encodes the <strong>inpsp.bin</strong> stream to legacy byte oriented format:</p>
+<p>The following command encodes the <strong>inpsp.bin</strong> stream to legacy byte-oriented format:</p>
 <div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mdb</span> <span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">cl</span> <span class="o">-</span><span class="n">nsim</span> <span class="o">-</span><span class="n">tcf</span><span class="o">=</span><span class="n">em9d_voice_audio</span> <span class="n">encg722</span><span class="o">.</span><span class="n">elf</span> <span class="o">-</span><span class="n">byte</span> <span class="o">../</span><span class="n">testvectors</span><span class="o">/</span><span class="n">inp</span><span class="o">/</span><span class="n">inpsp</span><span class="o">.</span><span class="n">bin</span> <span class="o">../</span><span class="n">testvectors</span><span class="o">/</span><span class="n">temp</span><span class="o">.</span><span class="n">cod</span>
 </pre></div>
 </div>

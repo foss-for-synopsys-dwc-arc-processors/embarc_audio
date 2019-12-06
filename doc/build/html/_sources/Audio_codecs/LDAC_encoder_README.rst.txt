@@ -34,14 +34,14 @@ Codec-Specific Build Options
 :exc:`LTO_BUILD` option is disabled for this codec by default. To build the LDAC 
 encoder, you must use this specific option: :exc:`FX_MAPPING=ON/OFF`
 
-This option turns ON/OFF remapping of original mathematical fixed point functions
+This option turns ON/OFF remapping of original mathematical fixed-point functions
 to the optimized ones for ARCv2 DSP processor family. This option is enabled 
 by default.
 
 **Example**
 
 To build application and library with original (not optimized) mathematical 
-fixed point functions, use the following command:
+fixed-point functions, use the following command:
 
 .. code:: shell
 

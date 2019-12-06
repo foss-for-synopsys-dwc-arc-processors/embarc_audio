@@ -13,7 +13,7 @@ Source Code
 
 This codec is based on the original `G.711 <https://www.itu.int/rec/recommendation.asp?lang=en&parent=T-REC-G.711-198811-I>`__,
 25 November 1988, corresponding ANSI-C code is available in the G.711 module of the `ITU-T G.191 <https://www.itu.int/rec/T-REC-G.191/en>`__ Software Tools Library, 13 January 2019, 
-and this codec passses the test cases successfully.
+and this codec passes the test cases successfully.
 
 Multi-instance and reentrance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -204,12 +204,12 @@ in case if the value of <code class="xref py py-exc docutils literal notranslate
 <h2>Codec-Specific Build Options<a class="headerlink" href="#codec-specific-build-options" title="Permalink to this headline">¶</a></h2>
 <p><code class="xref py py-exc docutils literal notranslate"><span class="pre">LTO_BUILD</span></code> option is disabled for this codec by default. To build the LDAC
 encoder, you must use this specific option: <code class="xref py py-exc docutils literal notranslate"><span class="pre">FX_MAPPING=ON/OFF</span></code></p>
-<p>This option turns ON/OFF remapping of original mathematical fixed point functions
+<p>This option turns ON/OFF remapping of original mathematical fixed-point functions
 to the optimized ones for ARCv2 DSP processor family. This option is enabled
 by default.</p>
 <p><strong>Example</strong></p>
 <p>To build application and library with original (not optimized) mathematical
-fixed point functions, use the following command:</p>
+fixed-point functions, use the following command:</p>
 <div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmake</span> <span class="nb">all</span> <span class="n">FX_MAPPING</span><span class="o">=</span><span class="n">off</span>
 </pre></div>
 </div>
