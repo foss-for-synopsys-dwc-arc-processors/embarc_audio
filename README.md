@@ -1,6 +1,6 @@
 embARC Audio
 =====
-![](https://embarc.org/images/icons/icon_baremetal.jpg)  
+![](https://embarc.org/images/icons/icon_audio.jpg)  
 ###### This repository contains source code of voice and audio codecs, test library and documentation.
 ## Release notes
 The following codecs were tuned for using MWDT compiler on processors families ARC EM/HS4xD voice audio:
