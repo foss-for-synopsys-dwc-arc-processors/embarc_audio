@@ -1,6 +1,6 @@
 embARC Audio
 =====
-![](https://embarc.org/images/icons/icon_baremetal.jpg)  
+![](https://embarc.org/images/icons/icon_audio.jpg)  
 ###### This repository contains source code of voice and audio codecs, test library and documentation.
 ## Release notes
 The following codecs were tuned for using MWDT compiler on processors families ARC EM/HS4xD voice audio:
@@ -12,7 +12,7 @@ The following codecs were tuned for using MWDT compiler on processors families A
 - Sony LDAC encoder
 
 ## Package structure
-[doc](/doc) - contains the API documentation of the embARC MLI library  
+[doc](/doc) - contains the API documentation of the embARC Audio Codecs library  
 [BT-CVSD](/cvsd) - Bluetooth CVSD codec  
 [G.711](/g711) - G.711 codec  
 [G.722](/g722) - G.722 codec  

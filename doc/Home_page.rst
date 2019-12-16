@@ -16,7 +16,7 @@ Table of Contents
    Getting_started/Getting_started.rst
    Audio_codecs/Audio_codecs.rst
 
-.. |image0| image:: ./images/icon_baremetal.jpg
+.. |image0| image:: ./images/icon_audio.jpg
 
 Indices and Tables
 ==================
