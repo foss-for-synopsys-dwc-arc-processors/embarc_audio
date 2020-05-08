@@ -1,5 +1,5 @@
 /*
-* Copyright 2019, Synopsys, Inc.
+* Copyright 2019-2020, Synopsys, Inc.
 * All rights reserved.
 *
 * This source code is licensed under the BSD-3-Clause license found in
@@ -8,6 +8,8 @@
 */
 
 #include "cvsd.h"
+
+#include "assert.h"
 #ifdef _ARC
 #include "arc/arc_intrinsics.h"
 #ifdef __FXAPI__
@@ -36,112 +38,140 @@ short cvsdInit(cvsd_t *cvsd)
     return 0;
 }
 
+static inline void encode_bit(const int16_t *restrict *restrict in, register int32_t *restrict accum,
+        register int32_t *restrict step_size, register uint32_t *restrict output_byte)
+{
+    if ((*(*in)++ << PRECISION) >= *accum)
+    {
+        *output_byte <<= 1;
+#ifdef __FXAPI__
+        *accum = fx_add_q31(*accum, *step_size);
+#else
+        *accum += *step_size;
+        *accum = _max(NEG_ACCUM_MAX, *accum);
+#endif
+    }
+    else
+    {
+        *output_byte = (*output_byte << 1) | 1;
+#ifdef __FXAPI__
+        *accum = fx_sub_q31(*accum, *step_size);
+#else
+        *accum -= *step_size;
+        *accum = _min(POS_ACCUM_MAX, *accum);
+#endif
+    }
+    *accum -= (*accum >> ETA_EXP);
+    uint32_t tmp = *output_byte & BIT_MASK;
+    if ((tmp == BIT_MASK) || (tmp == 0))
+    {
+        *step_size += MIN_DELTA;
+        *step_size = _min(MAX_DELTA, *step_size);
+    }
+    else
+    {
+        *step_size -= (*step_size >> BETA_EXP);
+        *step_size = _max(MIN_DELTA, *step_size);
+    }
+}
+static inline void swape_word32(uint32_t * const restrict out_pos, const uint32_t *restrict output_byte)
+{
+#ifdef __Xswap
+    *out_pos = _swape(*output_byte);
+#else
+    int8_t *s_out = (int8_t *)out_pos;
+    *s_out++ = (*output_byte >> 24) & 0xff;
+    *s_out++ = (*output_byte >> 16) & 0xff;
+    *s_out++ = (*output_byte >> 8) & 0xff;
+    *s_out++ = *output_byte & 0xff;
+#endif
+}
+
 void cvsdEncode(cvsd_t *cvsd,  const short *restrict in, register unsigned int input_len,  unsigned int *restrict out)
 {
-    register unsigned int output_byte = cvsd->output_byte;
-    register int local_accum = cvsd->accumulator;
-    register int local_step_size = cvsd->step_size;
+    register const int word32_len = 32;
+    register const int32_t rest_bits = input_len % word32_len;
+    register const int32_t input_len_bytes = input_len / word32_len;
+    uint32_t output_byte = cvsd->output_byte;
+    int32_t accum = cvsd->accumulator;
+    int32_t step_size = cvsd->step_size;
+    uint8_t *out_pos = (uint8_t *)out;
+    //After interpolation minimum input_len can not be less then 8 bits
+    assert((input_len % 8) == 0);
 
-    for (int i = 0; i < input_len; i += 32)
+    for (int i = 0; i < input_len_bytes; i++)
     {
-        for (int bit_counter = 0; bit_counter < 32; bit_counter++)
+        for (int bit_counter = 0; bit_counter < word32_len; bit_counter++)
         {
-            if ((*in++ << PRECISION) >= local_accum)
-            {
-                output_byte <<= 1;
-#ifdef __FXAPI__
-                local_accum = fx_add_q31(local_accum, local_step_size);
-#else
-                local_accum += local_step_size;
-                local_accum = _max(NEG_ACCUM_MAX, local_accum);
-#endif
-            }
-            else
-            {
-                output_byte = (output_byte << 1) | 1;
-#ifdef __FXAPI__
-                local_accum = fx_sub_q31(local_accum, local_step_size);
-#else
-                local_accum -= local_step_size;
-                local_accum = _min(POS_ACCUM_MAX, local_accum);
-#endif
-            }
-            local_accum -= (local_accum >> ETA_EXP);
-            unsigned int tmp = output_byte & BIT_MASK;
-            if ((tmp == BIT_MASK) || (tmp == 0))
-            {
-                local_step_size += MIN_DELTA;
-                local_step_size = _min(MAX_DELTA, local_step_size);
-            }
-            else
-            {
-                local_step_size -= (local_step_size >> BETA_EXP);
-                local_step_size = _max(MIN_DELTA, local_step_size);
-            }
+            encode_bit(&in, &accum, &step_size, &output_byte);
         }
-#ifdef __Xswap
-        *out = _swape(output_byte);
-#else
-        char *s_out = (char *)out;
-        *s_out++ = (output_byte >> 24) & 0xff;
-        *s_out++ = (output_byte >> 16) & 0xff;
-        *s_out++ = (output_byte >> 8) & 0xff;
-        *s_out++ = output_byte & 0xff;
-#endif
-        out++;
+        swape_word32((uint32_t *)out_pos, &output_byte);
+        out_pos += sizeof(int32_t);
     }
+
+    if (rest_bits)
+    {
+        for (int bit_counter = 0; bit_counter < rest_bits; bit_counter++)
+        {
+            encode_bit(&in, &accum, &step_size, &output_byte);
+        }
+
+        const uint32_t shifted_output_byte = output_byte << (word32_len - rest_bits);
+        swape_word32((uint32_t *)out_pos, &shifted_output_byte);
+    }
+
     cvsd->output_byte = output_byte;
-    cvsd->accumulator = local_accum;
-    cvsd->step_size = local_step_size;
+    cvsd->accumulator = accum;
+    cvsd->step_size = step_size;
 }
 
 void cvsdDecode(cvsd_t *restrict cvsd,  const unsigned char *restrict in, register unsigned int input_len,  short *restrict out)
 {
-    register unsigned int runner = cvsd->output_byte;
-    register int local_accum = cvsd->accumulator;
-    register int local_step_s = cvsd->step_size;
+    register uint32_t runner = cvsd->output_byte;
+    register int32_t accum = cvsd->accumulator;
+    register int32_t step_size = cvsd->step_size;
     for (int i = 0; i < input_len; i++)
     {
 #pragma clang loop unroll(full)
-        for (unsigned int bit_counter = 128; bit_counter > 0; (bit_counter >>= 1))
+        for (int bit_counter = 128; bit_counter > 0; (bit_counter >>= 1))
         {
-            *out++ = (local_accum >> PRECISION);
+            *out++ = (accum >> PRECISION);
             if (in[i] & bit_counter)
             {
                 runner = (runner << 1) | 1;
 #ifdef __FXAPI__
-                local_accum = fx_sub_q31(local_accum, local_step_s);
+                accum = fx_sub_q31(accum, step_size);
 #else
-                local_accum -= local_step_s;
-                local_accum = _min(POS_ACCUM_MAX, local_accum);
+                accum -= step_size;
+                accum = _min(POS_ACCUM_MAX, accum);
 #endif
             }
             else
             {
                 runner <<= 1;
 #ifdef __FXAPI__
-                local_accum = fx_add_q31(local_accum, local_step_s);
+                accum = fx_add_q31(accum, step_size);
 #else
-                local_accum += local_step_s;
-                local_accum = _max(NEG_ACCUM_MAX, local_accum);
+                accum += step_size;
+                accum = _max(NEG_ACCUM_MAX, accum);
 #endif
             }
-            local_accum -= (local_accum >> ETA_EXP);
-            int tmp = runner & BIT_MASK;
+            accum -= (accum >> ETA_EXP);
+            int32_t tmp = runner & BIT_MASK;
             if ((tmp == BIT_MASK) || (tmp == 0))
             {
-                local_step_s += MIN_DELTA;
-                local_step_s = _min(MAX_DELTA, local_step_s);
+                step_size += MIN_DELTA;
+                step_size = _min(MAX_DELTA, step_size);
             }
             else
             {
-                local_step_s -= (local_step_s >> BETA_EXP);
-                local_step_s = _max(MIN_DELTA, local_step_s);
+                step_size -= (step_size >> BETA_EXP);
+                step_size = _max(MIN_DELTA, step_size);
             }
         }
     }
 
-    cvsd->accumulator = local_accum;
-    cvsd->step_size = local_step_s;
+    cvsd->accumulator = accum;
+    cvsd->step_size = step_size;
     cvsd->output_byte = runner;
 }
