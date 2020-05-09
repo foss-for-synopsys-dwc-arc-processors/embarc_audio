@@ -71,7 +71,7 @@ void usage()
 {
     printf("cvsd_example [options]\n");
     printf("  -u/-h   : print usage\n");
-    printf("  -F <frame_len>     : number of samples, must be a multiple of 8 for encoder, default: 256\n");
+    printf("  -F <frame_len>     : number of samples, default: 256\n");
     printf("  -enc     : Encoder only\n");
     printf("  -dec     : Decoder only\n");
     printf("  -encdec     : Encoder and decoder\n");
