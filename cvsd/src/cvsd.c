@@ -87,21 +87,22 @@ static inline void swape_word32(uint32_t * const restrict out_pos, const uint32_
 #endif
 }
 
-void cvsdEncode(cvsd_t *cvsd,  const short *restrict in, register unsigned int input_len,  unsigned int *restrict out)
+void cvsdEncode(cvsd_t *cvsd,  const short *restrict in, register unsigned int input_frame_len,  unsigned int *restrict out)
 {
-    register const int word32_len = 32;
-    register const int32_t rest_bits = input_len % word32_len;
-    register const int32_t input_len_bytes = input_len / word32_len;
+    register const int double_word_len = 32;
+    register const uint32_t double_word = (double_word_len - 1);
+    register const int32_t rest_samples = input_frame_len & double_word;
+    register const int32_t input_frame_len_multiplied_32 = input_frame_len / double_word_len;
     uint32_t output_byte = cvsd->output_byte;
     int32_t accum = cvsd->accumulator;
     int32_t step_size = cvsd->step_size;
     uint8_t *out_pos = (uint8_t *)out;
-    //After interpolation minimum input_len can not be less then 8 bits
-    assert((input_len % 8) == 0);
+    //After interpolation minimum input_frame_len can not be less then 8 samples
+    assert((input_frame_len % 8) == 0);
 
-    for (int i = 0; i < input_len_bytes; i++)
+    for (int i = 0; i < input_frame_len_multiplied_32; i++)
     {
-        for (int bit_counter = 0; bit_counter < word32_len; bit_counter++)
+        for (int i = 0; i < double_word_len; i++)
         {
             encode_bit(&in, &accum, &step_size, &output_byte);
         }
@@ -109,14 +110,14 @@ void cvsdEncode(cvsd_t *cvsd,  const short *restrict in, register unsigned int i
         out_pos += sizeof(int32_t);
     }
 
-    if (rest_bits)
+    if (rest_samples)
     {
-        for (int bit_counter = 0; bit_counter < rest_bits; bit_counter++)
+        for (int i = 0; i < rest_samples; i++)
         {
             encode_bit(&in, &accum, &step_size, &output_byte);
         }
 
-        const uint32_t shifted_output_byte = output_byte << (word32_len - rest_bits);
+        const uint32_t shifted_output_byte = output_byte << (double_word_len - rest_samples);
         swape_word32((uint32_t *)out_pos, &shifted_output_byte);
     }
 
@@ -125,12 +126,12 @@ void cvsdEncode(cvsd_t *cvsd,  const short *restrict in, register unsigned int i
     cvsd->step_size = step_size;
 }
 
-void cvsdDecode(cvsd_t *restrict cvsd,  const unsigned char *restrict in, register unsigned int input_len,  short *restrict out)
+void cvsdDecode(cvsd_t *restrict cvsd,  const unsigned char *restrict in, register unsigned int input_frame_len,  short *restrict out)
 {
     register uint32_t runner = cvsd->output_byte;
     register int32_t accum = cvsd->accumulator;
     register int32_t step_size = cvsd->step_size;
-    for (int i = 0; i < input_len; i++)
+    for (int i = 0; i < input_frame_len; i++)
     {
 #pragma clang loop unroll(full)
         for (int bit_counter = 128; bit_counter > 0; (bit_counter >>= 1))
