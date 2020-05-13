@@ -8,7 +8,7 @@
 
 include ..$(PS)..$(PS)rules$(PS)common_build_config.mk
 
-override CFLAGS += -Hfxapi -fvectorize -Hloop_sms -Hinline_threshold=555 -Hunswitch=30 -Hunroll=150 -Hpipeline
+override CFLAGS += -fvectorize -Hloop_sms -Hinline_threshold=555 -Hunswitch=30 -Hunroll=150 -Hpipeline
 override ASMFLAGS += 
 override LRFLAGS  += 
 override LDFLAGS  += 

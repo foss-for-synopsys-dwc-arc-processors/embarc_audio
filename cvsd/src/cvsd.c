@@ -26,9 +26,9 @@
 #define MIN_DELTA 0x2800            // 10 << 10 (15q10)
 #define BETA_EXP 10                 // Exponential of beta = 1024 = 2^10
 #define ETA_EXP 5                   // Exponential of eta = 32 = 2^5
-#define NEG_ACCUM_MAX -0x1FFFC00    // -32767 << 10 (15q10)
-#define POS_ACCUM_MAX 0x1FFFC00     // 32767 << 10 (15q10)
 #define BIT_MASK 0xF                // Bit mask for J = 4 and K = 4
+#define NEG_ACCUM_MAX ((-32767) << 10)
+#define POS_ACCUM_MAX (32767 << 10)
 
 short cvsdInit(cvsd_t *cvsd)
 {
@@ -44,22 +44,14 @@ static inline void encode_bit(const int16_t *restrict *restrict in, register int
     if ((*(*in)++ << PRECISION) >= *accum)
     {
         *output_byte <<= 1;
-#ifdef __FXAPI__
-        *accum = fx_add_q31(*accum, *step_size);
-#else
         *accum += *step_size;
-        *accum = _max(NEG_ACCUM_MAX, *accum);
-#endif
+        *accum = _min(POS_ACCUM_MAX, *accum);
     }
     else
     {
         *output_byte = (*output_byte << 1) | 1;
-#ifdef __FXAPI__
-        *accum = fx_sub_q31(*accum, *step_size);
-#else
         *accum -= *step_size;
-        *accum = _min(POS_ACCUM_MAX, *accum);
-#endif
+        *accum = _max(NEG_ACCUM_MAX, *accum);
     }
     *accum -= (*accum >> ETA_EXP);
     uint32_t tmp = *output_byte & BIT_MASK;
@@ -74,7 +66,7 @@ static inline void encode_bit(const int16_t *restrict *restrict in, register int
         *step_size = _max(MIN_DELTA, *step_size);
     }
 }
-static inline void swape_word32(uint32_t * const restrict out_pos, const uint32_t *restrict output_byte)
+static inline void swap_endian(uint32_t * const restrict out_pos, const uint32_t *restrict output_byte)
 {
 #ifdef __Xswap
     *out_pos = _swape(*output_byte);
@@ -106,7 +98,7 @@ void cvsdEncode(cvsd_t *cvsd,  const short *restrict in, register unsigned int i
         {
             encode_bit(&in, &accum, &step_size, &output_byte);
         }
-        swape_word32((uint32_t *)out_pos, &output_byte);
+        swap_endian((uint32_t *)out_pos, &output_byte);
         out_pos += sizeof(int32_t);
     }
 
@@ -118,7 +110,7 @@ void cvsdEncode(cvsd_t *cvsd,  const short *restrict in, register unsigned int i
         }
 
         const uint32_t shifted_output_byte = output_byte << (double_word_len - rest_samples);
-        swape_word32((uint32_t *)out_pos, &shifted_output_byte);
+        swap_endian((uint32_t *)out_pos, &shifted_output_byte);
     }
 
     cvsd->output_byte = output_byte;
@@ -140,22 +132,14 @@ void cvsdDecode(cvsd_t *restrict cvsd,  const unsigned char *restrict in, regist
             if (in[i] & bit_counter)
             {
                 runner = (runner << 1) | 1;
-#ifdef __FXAPI__
-                accum = fx_sub_q31(accum, step_size);
-#else
                 accum -= step_size;
-                accum = _min(POS_ACCUM_MAX, accum);
-#endif
+                accum = _max(NEG_ACCUM_MAX, accum);
             }
             else
             {
                 runner <<= 1;
-#ifdef __FXAPI__
-                accum = fx_add_q31(accum, step_size);
-#else
                 accum += step_size;
-                accum = _max(NEG_ACCUM_MAX, accum);
-#endif
+                accum = _min(POS_ACCUM_MAX, accum);
             }
             accum -= (accum >> ETA_EXP);
             int32_t tmp = runner & BIT_MASK;
