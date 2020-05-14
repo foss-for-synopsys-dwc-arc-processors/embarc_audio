@@ -12,9 +12,11 @@
 #include "assert.h"
 #ifdef _ARC
 #include "arc/arc_intrinsics.h"
+#endif
 #ifdef __FXAPI__
 #include "fxarc.h"
-#endif
+#else
+#include "stdint.h"
 #endif
 
 #ifdef DEBUG_OUTPUT
