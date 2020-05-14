@@ -21,14 +21,14 @@
 #include "stdio.h"
 #endif
 
-#define PRECISION 10
-#define MAX_DELTA 0x140000          // 1280 << 10 (15q10)
-#define MIN_DELTA 0x2800            // 10 << 10 (15q10)
-#define BETA_EXP 10                 // Exponential of beta = 1024 = 2^10
-#define ETA_EXP 5                   // Exponential of eta = 32 = 2^5
-#define BIT_MASK 0xF                // Bit mask for J = 4 and K = 4
-#define NEG_ACCUM_MAX ((-32767) << 10)
-#define POS_ACCUM_MAX (32767 << 10)
+const int PRECISION = 10;
+const int BETA_EXP = 10;                 // Exponential of beta = 1024 = 2^10
+const int ETA_EXP = 5;                   // Exponential of eta = 32 = 2^5
+const int BIT_MASK = 0xF;                // Bit mask for J = 4 and K = 4
+const int MAX_DELTA = 1280 << PRECISION;
+const int MIN_DELTA = 10 << PRECISION;
+const int POS_ACCUM_MAX = 32767 << PRECISION;
+const int NEG_ACCUM_MAX = -POS_ACCUM_MAX;
 
 short cvsdInit(cvsd_t *cvsd)
 {
