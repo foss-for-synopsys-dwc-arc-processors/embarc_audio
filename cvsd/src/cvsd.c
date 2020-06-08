@@ -40,7 +40,7 @@ short cvsdInit(cvsd_t *cvsd)
     return 0;
 }
 
-static inline void encode_bit(const int16_t *restrict *restrict in, register int32_t *restrict accum,
+static inline __attribute__((always_inline)) void encode_bit(const int16_t *restrict *restrict in, register int32_t *restrict accum,
         register int32_t *restrict step_size, register uint32_t *restrict output_byte)
 {
     if ((*(*in)++ << PRECISION) >= *accum)
@@ -68,18 +68,6 @@ static inline void encode_bit(const int16_t *restrict *restrict in, register int
         *step_size = _max(MIN_DELTA, *step_size);
     }
 }
-static inline void swap_endian(uint32_t * const restrict out_pos, const uint32_t *restrict output_byte)
-{
-#ifdef __Xswap
-    *out_pos = _swape(*output_byte);
-#else
-    int8_t *s_out = (int8_t *)out_pos;
-    *s_out++ = (*output_byte >> 24) & 0xff;
-    *s_out++ = (*output_byte >> 16) & 0xff;
-    *s_out++ = (*output_byte >> 8) & 0xff;
-    *s_out++ = *output_byte & 0xff;
-#endif
-}
 
 void cvsdEncode(cvsd_t *cvsd,  const short *restrict in, register unsigned int input_frame_len,  unsigned int *restrict out)
 {
@@ -100,7 +88,8 @@ void cvsdEncode(cvsd_t *cvsd,  const short *restrict in, register unsigned int i
         {
             encode_bit(&in, &accum, &step_size, &output_byte);
         }
-        swap_endian((uint32_t *)out_pos, &output_byte);
+        uint32_t * out_pos32 = (uint32_t *)out_pos;
+        *out_pos32 = __builtin_bswap32(output_byte);
         out_pos += sizeof(int32_t);
     }
 
@@ -112,7 +101,8 @@ void cvsdEncode(cvsd_t *cvsd,  const short *restrict in, register unsigned int i
         }
 
         const uint32_t shifted_output_byte = output_byte << (double_word_len - rest_samples);
-        swap_endian((uint32_t *)out_pos, &shifted_output_byte);
+        uint32_t * out_pos32 = (uint32_t *)out_pos;
+        *out_pos32 = __builtin_bswap32(shifted_output_byte);
     }
 
     cvsd->output_byte = output_byte;
