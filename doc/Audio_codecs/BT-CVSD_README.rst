@@ -62,9 +62,7 @@ The following table lists the parameters that can be passed to this codec:
    +-----------------------------------+-----------------------------------+
    | :exc:`-u/-h`                      | Print help message                |
    +-----------------------------------+-----------------------------------+
-   | :exc:`-F <frame_len>`             | Number of samples, must be a      |
-   |                                   | multiple of 4 for encoder and     |
-   |                                   | decoder, default: 256             |
+   | :exc:`-F <frame_len>`             | Number of samples, default: 256   |
    +-----------------------------------+-----------------------------------+
    | :exc:`-enc`                       | Run encoder only                  |
    +-----------------------------------+-----------------------------------+

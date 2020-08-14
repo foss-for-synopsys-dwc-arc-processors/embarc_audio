@@ -25,9 +25,7 @@ extern "C"
 #pragma pop_align_members()
 
     short cvsdInit(cvsd_t *cvsd);
-
     void cvsdEncode(cvsd_t *restrict cvsd,  const short *restrict in, unsigned int input_len,  unsigned int * restrict out);
-
     void cvsdDecode(cvsd_t *restrict cvsd,  const unsigned char *restrict in, unsigned int input_len,  short *restrict out);
 
 #ifdef __cplusplus
