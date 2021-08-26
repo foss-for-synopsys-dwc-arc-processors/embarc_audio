@@ -57,5 +57,4 @@ None
 
 ## Contact information
 * Aleksandr Kiiaev <Alexander.Kiyaev@synopsys.com>
-* Kirill Arestov <Kirill.Arestov@synopsys.com>
 * Ilya Pozdnov <Ilya.Pozdnov@synopsys.com>
